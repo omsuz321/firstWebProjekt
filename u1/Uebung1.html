@@ -102,11 +102,123 @@
         <p>
             -Vorab: "(ul)...(/ul)" oder "(ol)...(/ol)" sind <b>Block-Tags</b> und erstellen eine <b>Liste</b>.
             Ersteres eine unsortierte (Stichpunkte), zweiteres eine sortierte (nummerierte Aufzählung) Liste.
-            <br>
-            mehr dazu <a href="">hier</a>
+        </p>
+        <p>
+            Bei beiden muss innerhalb für jedes Element der Liste <mark>"(li) x (/li)"</mark> stehen, wobei x für den Inhalt bzw. dem 
+            "String" oder anderen HTML-kompatible Medium steht, der angezeigt werden soll. <br>
+            Um nun eine sortierte, verschachtelte Liste mit tiefe n zu erzeugen, muss man innerhalb der aktuellen 
+            Verschachtelungstiefe, einfach eine weitere sotirete Liste erzeugen. <br> Für die äußere Liste sind innerhalb 
+            ihrer sowohl "normale" Elemente, als auch Listen gleich gesetzt bzw. -gültig.
+        </p>
+        <p>
+            
+            Daher kann man für jede Situation wo ein "normales" Listenelement eigesetzt werden kann, auch ein
+            Liste stehen und andersrum
+        </p>
+        <p>
+            für genaueres siehe <a href="https://www.scaler.com/topics/nested-list-in-html/">hier</a>
+        </p>
+        <h3>Wie ist eine HTML-Tabelle aufgebaut?</h3>
+        <h4>Bsp.</h4>
+        <img src="./tableExample.png" alt="ein exemplarisches Bild einer Tabelle">
+
+        <p>
+        <ol>
+           <li>
+                <h4>Zeile:</h4>
+                <ul><li>Table Row ( kurz tr), um eine Zeile zu definieren:"(tr) ... (/tr)"</li></ul>
+           </li>
+           <li>
+                <h4>Namen der Spalten / Table Header:</h4>
+                <ul>
+                    <li>mit "(th) ... (/th)" kann man den Namen der Spalte festlegen</li>
+                    <li>steht innerhalb eines  "(tr) ... (/tr)"</li>
+                </ul>
+           </li>
+
+            <li>
+                <h4>Spalte:</h4>
+                <ul>
+                    <li>Table Data (kurz td), um innerhalb einer Zeile die daten abzugeben</li>
+                    <li>nutzt dafür "(td) ... (/td)" , um die Spalteninhalte innerhalb einer Zeile Anzugehen</li>
+                    <li>daraus ergeben sich automatisch die Spalten</li>
+                    <li>
+                        <p>
+                            Tabellen sind standesgemäß quadratisch. Falls also Zeilen unterschiedlich groß sind, wird die Spaltenanzahl der Table  bzw. Breite der Tabelle anhand der Zeile,
+                            die am meisten Spalten benötigt, bestimmt. <br>		
+                            => Leere Einträge bei den anderen Zeilen, wo keine Einträge für die Zeile stehen
+                        </p>
+                    </li>
+                    <li>steht innerhalb eines "(tr) ... (/tr)"</li>
+                </ul>
+            </li>
+
+        </ol>
 
         </p>
+        <h5>Vorgehen</h5>
+        <p>
+            Für jede Verschachtelte Tabellen, in dem man innerhalb eines  "(td) ... (/td)"  einfach so vorgehen, als würde man eine neue Tabelle erstellen
+        </p>
+        <br>
+        <br>
+
+        <h3>Welche Konventionen sollte man bei Pfaden und Dateinamen beachten?</h3>
+        <p>
+            Immer den relativen Path angeben, damit die Webseite und somit die Web pages nicht die momentane URL 		
+            und somit nicht vom momentanen System gebunden ist, damit es immer und überall funktioniert.
+        </p>
+        <br>
+        
+        <h3>Wie baut man in HTML ein Menü?</h3>
+        <p>
+            ein HTML-Menu bzw. ein Navigator Bar wir wie folgt erstellt:
+            <br>
+			man nimmt sich eine Auflsitungsweise und fügt <b>Hyperlinks</b> hinzu. Wie genua erfährst du <a href="../u1/Erlaeuterung.html">hier</a>
+            <br>
+            <h4>Hyperlinks</h4>
+            nutzt dafür "(a href=...)"
+            <ul>
+                <li>
+                    <p>
+                        der "Anocher-Tag"  "(a ...)"" wird verwendet, um Hyperlinks zu erstellen,
+                        um auf andere digitale Dokumente bzw. Webseiten zu gelangen (falls ja das digitale Dokument nicht auf der aktuellen Webseite sich befindet) 
+                        <br>
+                    </p>
+                    <p>
+                        das href-Attribut ( Hypertext Reference) dient dazu, das Ziel des Hyperlinks anzugeben 
+						Bsp.(a href="https://www.example.com")Besuche 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        falls bspw. "#news" steht wie bspw. in <b>"(a href="#news")News(/a)"</b>, handelt es sich um ein internen Verweis,
+                        daher der link zu einem anderen abschnitt der Webseite bzw. des digitalen Dokuments verweist	
+                    </p>
+                    <p>
+                        dafür muss aber zuvor ein hyperlin innerhalb des domukentes erstellet worden sein und mus wie folgt aussehen:
+                        <br>
+                        <br>
+                        <center>
+                            (h1)(a name="section1")(/a)Erster Abschnitt(/h1)
+                            <br><br>
+					  	    (a href="#section1")Zu Abschnitt 1 springen(/a)	
+                        </center>
+                        nun wäre solch ein interner Verweis möglich
+                    </p>
+                </li>
+            </ul>
+        </p>
+
+        
     </div>
+
+
+    
+        
+
+   
+    
 
 
        
