@@ -82,11 +82,52 @@
     </ul>
     <p> <b>Ressourcen:</b> in dem kontex Dokumente, datein wie bilder bzw. alles was eine URI hat.</p>
     </div>
-     <br>
+    <hr>
+    <br>
+
+
+    
+     <h2>HTTP</h2>
+    <div>
+        <h3>Sie bekommen im Browser den HTTP Status Code 200. Was bedeutet das?</h3>
+        <ul><li>Anfrage war erfolgreich und Server hat die Daten erfolgreich geliefert</li></ul>
+        <br>
+
+        <h3>Anfrage war erfolgreich und Server hat die Daten erfolgreich geliefert</h3>
+        <ul>
+            <li>
+                <p>
+                    Angeforderte Ressource wurde verlegt. Daher sollte der Browser automatisch weiterleiten,
+                    falls im HTTP-Header der Server-Antwort die neue URL steht für die (dauerhafte) Weiterleitung hinterlegt wurde.
+                </p>
+            </li>
+        </ul>
+
+        <h3>Sie bekommen im Browser den HTTP Status Code 400. Was hat das zu bedeuten? Was können Sie dagegen tun?</h3>
+        <ul>
+            <li>
+                <p> <b>"Bad Request"</b> => Anfrage war fehlerhaft oder nicht verstanden wurde.
+                    Daher sollte man sleber überprüfen ob die Abfrage korrekt ist und ggf. Fehler beheben</p>
+            </li>
+        </ul>
+
+        <h3>Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten? Was können Sie dagegen tun?</h3>
+        <ul>
+            <li>
+                <p>
+                    "Forbidden" => Server hat Anfrage zwar verstanden, kann aber aus irgendeinem Grund nicht auf die angeforderten Ressourcen zugreifen bzw. wird ihm verweigert. <br>
+                     Kann an Berechtigungsproblem liegen. Daher sichersrtellen, dass man die Berechtigung des Zugriffes hat oder die IP-Adresse nicht beschränkt ist durch durch bspw. GeoBlocking
+                </p>
+            </li>
+        </ul>
+
+
+        
+    </div>
 
     
     <hr>
-    <h2>HTTP</h2>
+    <h2>HTML</h2>
     <div>
         <h3>Was ist HTML?</h3>
         <ul>
@@ -120,7 +161,7 @@
         </p>
         <h3>Wie ist eine HTML-Tabelle aufgebaut?</h3>
         <h4>Bsp.</h4>
-        <img src="./tableExample.png" alt="ein exemplarisches Bild einer Tabelle">
+        <img src="./pictures/tableExample.png" alt="ein exemplarisches Bild einer Tabelle">
 
         <p>
         <ol>
@@ -204,17 +245,52 @@
                             <br><br>
 					  	    (a href="#section1")Zu Abschnitt 1 springen(/a)	
                         </center>
-                        nun wäre solch ein interner Verweis möglich
+                        nun wäre solch ein <b>interner Verweis</b> möglich
                     </p>
                 </li>
             </ul>
         </p>
+        <br>
 
-        
+        <h3>Welche Attribute sollte man bei Bildern wie verwenden?</h3>
+        <p>
+            Vorab: mit"(img src=... alt=)" kann man ein Bild einfügen
+        </p>
+        <p>
+            <ul>
+                <li><b>"src"</b> ist ein Pflichtattribut und beinhaltet den Path bzw. die URL zum Bild</li>
+                <li>Alternativ falls das Bild nicht angezeigt werden kann: <b>"alt"</b>,
+                    falls das Bild <b>nicht Angezeigt werden kann</b>, dann der "alt" Wert, als Text</li>
+            </ul>
+        </p>
+        <p>
+            <b>Merke:</b> in dem Moment, wo man eine Website aufruft, in der ein Bild ist, wie bei jedem Aufruf der website, das Bild 
+            über die "src" abgefragt, <br>
+            daher vom selben Server oder einem anderen und fügt es einfach in die HTML-Seite ein.
+            Falls also Bild nicht mehr über den eingetragenen "src" aufrufbar ist <br>
+            bspw. wegen eines Broken Links, dann wird 
+            ein "Borken Link Icon" angezeigt.
+        </p>
     </div>
+    <hr>
+    <br>
 
 
-    
+    <h2> HTML-Wireframe</h2>
+    <div>
+        <p>
+            Dies ist ein beispielweiser Versuch an hand eines Bildes, folgendes digitale Dokument bzw. Webseite zu replezieren:
+
+        </p>
+        <table> <!-- ahd to use a table cause otherwise it the text upon and the linkt to the homagee were on te same level as this picture-->
+            <td> <img src="./pictures/wireframe01.jpg" alt="Photo of a Website" with="500" height="400" align="left" > </td>               
+        </table>
+        <a href="./HTML-Wireframe.html">hier</a> finden Sie das Replikta </td></td>
+    </div>
+    <br>
+
+
+    <a href="../u0/index.html"> hompage</a>
         
 
    
@@ -224,5 +300,5 @@
        
 
 
-    <a href="../u0/index.html"> Startseite</a>
+
 </body>
