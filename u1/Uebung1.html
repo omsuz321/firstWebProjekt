@@ -110,6 +110,8 @@
                     Daher sollte man sleber überprüfen ob die Abfrage korrekt ist und ggf. Fehler beheben</p>
             </li>
         </ul>
+        <br>
+        
 
         <h3>Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten? Was können Sie dagegen tun?</h3>
         <ul>
@@ -120,7 +122,22 @@
                 </p>
             </li>
         </ul>
+        <br>
 
+        <h3>Aus Performancegründen soll die Option-Request cacheable sein. Wie könnten Sie dafür eine Lösung angehen?</h3>
+        <ul>
+            <li>
+                <p>
+                    <b>Vorab</b>: Option-Request erlauben es dem Client rauszufinden welche HTTP-Methoden unterstützt werden von bestimmten von Ressourcen,
+                    die von einer URL oder URI identifiziert werden können. Jedoch bei manchen wird dies nicht getriggert(Get, Head, Post)
+                    Man kann mit Hilfe des Cache-Controllers eine zeit angeben, für wie lange die Abfrage gecachet werden soll
+                </p>
+                <p>
+                    Man kann mit Hilfe des Cache-Controllers eine zeit angeben, für wie lange die Abfrage gecachet werden soll
+                </p>
+        
+            </li>
+        </ul>
 
         
     </div>
