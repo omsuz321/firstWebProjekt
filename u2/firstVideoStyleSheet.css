@@ -1,11 +1,18 @@
-h1 ~ p {
+ 
+ /* so all the paragrahps have a grey background*/
+ p {
     background-color: darkgray;
     font-size: 20px;
 }
-
+/* to formate he title a little*/
 h1 {
-    
     border: 2px solid black;
-    padding: 10px; /* Optional: Add padding for spacing between the text and the border */
-    font-size: 60px;
+    background-color: rgba(255, 255, 255, 0.5); /* with this the background of the headlien is whith and transperent*/ 
+    font-size: 60px; /*changes the size of the headline*/
+}
+
+
+div {
+    position: sticky; /* allows the headlines to follow along the scrol down*/
+    top: 7px;/* is being used with position in order to move the content of the tag*/
 }
