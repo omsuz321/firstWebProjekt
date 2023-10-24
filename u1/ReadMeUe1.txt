@@ -14,9 +14,14 @@ tabelle
 
 
 
-    das mit wichitg muss noch aufd die erläuterung drauf kommen
-    
+    html quisis
 
+<<<<<<< HEAD
     bei 6 stehen geblieben und noch die die quisis und lückentext offen
 
     
+=======
+        da habe ich extra eine "ol" genimmen, damit ich die fragen nummereirne kann und innerhalb einer ol, um stichpunktartig die Punkte 
+        aufzuzählen. zudaätzlich habe ich dann auch eine einrückung für die stichpunkte, was durch eine liste ensteht
+    
+>>>>>>> 56a6b2a914e9097aee1f7ab3a490707047059b24
