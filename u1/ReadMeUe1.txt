@@ -18,3 +18,5 @@ tabelle
     
 
     bei 6 stehen geblieben und noch die die quisis und lückentext offen
+
+    
