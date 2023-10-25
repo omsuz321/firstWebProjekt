@@ -2,41 +2,135 @@
 <html>
 <head>
     <style>
-        /* CSS-Regeln für element-content-box */
-        .element-content-box {
-            width: 200px;
-            height: 100px;
-            padding: 20px;
-            border: 2px solid black;
-            box-sizing: content-box;
+        .table {
+            display: table;
+            width: 100%;
+            border-collapse: collapse; /* Optional: Collapses table cell borders */
         }
 
-        /* CSS-Regeln für element-border-box */
-        .element-border-box {
-            width: 200px;
-            height: 100px;
-            padding: 20px;
-            border: 2px solid black;
-            box-sizing: border-box;
+        .table-row {
+            display: table-row;
         }
 
-        .container {
-            display: flex;
-            gap: 20px;
+        .table-cell {
+            display: table-cell;
+            padding: 10px;
+            border: 1px solid #000;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Verwende das Element element-content-box -->
-        <div class="element-content-box">
-            Content-Box
+    <div class="table">
+        <div class="table-row">
+            <div class="table-cell">Row 1, Cell 1</div>
+            <div class="table-cell">Row 1, Cell 2</div>
+            <div class="table-cell">Row 1, Cell 3</div>
         </div>
-
-        <!-- Verwende das Element element-border-box -->
-        <div class="element-border-box">
-            Border-Box
+        <div class="table-row">
+            <div class="table-cell">Row 2, Cell 1</div>
+            <div class="table-cell">Row 2, Cell 2</div>
+            <div class="table-cell">Row 2, Cell 3</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">Row 3, Cell 1</div>
+            <div class="table-cell">Row 3, Cell 2</div>
+            <div class="table-cell">Row 3, Cell 3</div>
         </div>
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<head>
+    <Title>Survey Form</Title>
+    <Style>
+        .container {
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom: 1px solid black;
+            
+        }
+        .centerForm {
+            display: table;
+            justify-content: center;
+            align-items: center;
+            height: 190px;
+            width: auto;
+            margin: 0;
+        }
+        form {
+            display:inline-block;
+            font-size: 8px;
+            text-align: right;
+            
+        }
+        input {
+            width: 70px; /* Adjust the width to your preference */
+            height: 10px; /* Adjust the height to your preference */
+        }
+
+
+
+    </Style>
+
+</head>
+
+<body style="background-color: lightblue; font-family: Roboto;">
+    <div style="height: auto;">
+        <center><h1 style="font-size:20px ;">Survey Form</h1></center>
+    </div>
+    
+
+   <div class="center">
+    <form class = "container"style=""> 
+ 
+        <center><h6 style="font-size: 8px;">Lets us know how to improve freeCodeCamp</h6></center>
+        <div>
+            <LAbel for="name">* Name:</LAbel>
+            <input type="text" id="name" name="name">
+            <br>
+            <label for ="email">*Email:</label>
+            <input type="text" id="email" name="email">
+            <br>
+            <label for="age" id="age" name="age">Age</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label for="option1">Definnitly</label>
+            <input type="radio" id="option1" name="options" value="option1">
+            <br>
+        
+            <label for="option2">Maybe</label>
+            <input type="radio" id="option2" name="options" value="option2">
+            <br>
+        
+            <label for="option3">Not Sure 3</label>
+            <input type="radio" id="option3" name="options" value="option3">
+        </div>
+
+
+         
+    </form>
+   </div>
+    
+</body>

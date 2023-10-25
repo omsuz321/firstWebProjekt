@@ -13,3 +13,109 @@ first video
 
 
 second Video
+
+
+
+
+
+
+
+
+Wireframe
+
+    i have used disply:inline, so that 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!DOCTYPE html>
+<head>
+    <Title>Survey Form</Title>
+    <Style>
+        .container {
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom: 1px solid black;
+            
+        }
+        .center {
+            display: table;
+            justify-content: center;
+            align-items: center;
+            height: 190px;
+            width: auto;
+            margin: 0;
+        }
+        form {
+            display:inline-block;
+            font-size: 8px;
+            text-align: right;
+            
+        }
+        input {
+            width: 70px; /* Adjust the width to your preference */
+            height: 10px; /* Adjust the height to your preference */
+        }
+
+
+
+    </Style>
+
+</head>
+
+<body style="background-color: lightblue; font-family: Roboto;">
+    <div style="height: auto;">
+        <center><h1 style="font-size:20px ;">Survey Form</h1></center>
+    </div>
+    
+
+   <div class="center">
+    <form class = "container"style=""> 
+ 
+        <center><h6 style="font-size: 8px;">Lets us know how to improve freeCodeCamp</h6></center>
+        <div>
+            <LAbel for="name">* Name:</LAbel>
+            <input type="text" id="name" name="name">
+            <br>
+            <label for ="email">*Email:</label>
+            <input type="text" id="email" name="email">
+            <br>
+            <label for="age" id="age" name="age">Age</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label for="option1">Definnitly</label>
+            <input type="radio" id="option1" name="options" value="option1">
+            <br>
+        
+            <label for="option2">Maybe</label>
+            <input type="radio" id="option2" name="options" value="option2">
+            <br>
+        
+            <label for="option3">Not Sure 3</label>
+            <input type="radio" id="option3" name="options" value="option3">
+        </div>
+
+
+         
+    </form>
+   </div>
+    
+</body>

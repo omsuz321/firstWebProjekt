@@ -1,11 +1,96 @@
 <!DOCTYPE html>
 <head>
     <Title>Survey Form</Title>
+    <Style>
+        .container {
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom: 1px solid black;
+            
+        }
+        .center {
+        
+            justify-content: center;
+            align-items: center;
+            height: 190px;
+            width: auto;
+            margin: 0;
+        }
+        form {
+            
+            font-size: 8px;
+            text-align: right;
+            
+            
+            
+        }
+        input {
+            width: 70px; /* Adjust the width to your preference */
+            height: 10px; /* Adjust the height to your preference */
+            margin-left: 10px; /* Add some space between the input and label */
+        }
+        }
+        label {
+            
+            text-align: right;
+            width: 100px; /* Adjust the width to control the distance from the right edge */
+            margin-right: 10px; /* Add some space between the label and input field */
+        }
+
+
+    </Style>
 
 </head>
 
 <body style="background-color: lightblue; font-family: Roboto;">
-
+    <div style="height: auto;">
+        <center><h1 style="font-size:20px ;">Survey Form</h1></center>
+    </div>
     
+
+   <center>
+    <div  class = "container" >
+        <div style=" margin-left: 100px;">
+            <form> 
+     
+                <center><h6 style="font-size: 8px;">Lets us know how to improve freeCodeCamp</h6></center>
+                <div>
+                    <LAbel for="name">* Name:</LAbel>
+                    <input type="text" id="name" name="name">
+                    <br>
+                    <label for ="email">*Email:</label>
+                    <input type="text" id="email" name="email">
+                    <br>
+                    <label for="age" id="age" name="age">Age</label>
+                    <input type="text">
+                </div>
+        
+                <div>
+                    
+                    <input type="radio" id="option1" name="options" value="option1">
+                    <label for="option1">Definnitly</label>
+                    <br>
+                
+                    
+                    <input type="radio" id="option2" name="options" value="option2">
+                    <label for="option2">Maybe</label>
+                    <br>
+                
+                    
+                    <input type="radio" id="option3" name="options" value="option3">
+                    <label for="option3">Not Sure 3</label>
+                </div>
+        
+        
+                 
+            </form>
+        </div>
+
+
+    </div>
+   </center>
     
 </body>
