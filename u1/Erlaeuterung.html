@@ -2,83 +2,41 @@
 <html>
 <head>
     <style>
-        /* Apply CSS for the divs */
-        .container {
-            position: relative;
-        }
-        .box {
+        /* CSS-Regeln für element-content-box */
+        .element-content-box {
             width: 200px;
-            margin: 10px;
-            padding: 10px;
-            background-color: #f0f0f0;
+            height: 100px;
+            padding: 20px;
+            border: 2px solid black;
+            box-sizing: content-box;
         }
 
-        .fixed {
-            position: fixed;
-            top: 0;
+        /* CSS-Regeln für element-border-box */
+        .element-border-box {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="box ">Div 1</div>
-        <p>
-            "Neon Genesis Evangelion" unfolds in a dystopian future where Earth is under the constant threat of mysterious beings known as
-             "Angels." Humanity's last hope lies in the hands of NERV, 
-            a shadowy organization that deploys colossal biomechanical robots, the Evangelions, to defend against these
-             celestial invaders. Yet, this premise is just the tip of the iceberg.
-        </p>
-        <p>
-            "Neon Genesis Evangelion" unfolds in a dystopian future where Earth is under the constant threat of mysterious beings known as
-             "Angels." Humanity's last hope lies in the hands of NERV, 
-            a shadowy organization that deploys colossal biomechanical robots, the Evangelions, to defend against these
-             celestial invaders. Yet, this premise is just the tip of the iceberg.
-        </p>
-        <p>
-            "Neon Genesis Evangelion" unfolds in a dystopian future where Earth is under the constant threat of mysterious beings known as
-             "Angels." Humanity's last hope lies in the hands of NERV, 
-            a shadowy organization that deploys colossal biomechanical robots, the Evangelions, to defend against these
-             celestial invaders. Yet, this premise is just the tip of the iceberg.
-        </p>
-        <div class="box ">Div 2</div>
-        <p>
-            "Neon Genesis Evangelion" unfolds in a dystopian future where Earth is under the constant threat of mysterious beings known as
-             "Angels." Humanity's last hope lies in the hands of NERV, 
-            a shadowy organization that deploys colossal biomechanical robots, the Evangelions, to defend against these
-             celestial invaders. Yet, this premise is just the tip of the iceberg.
-        </p>
-        <p>
-            "Neon Genesis Evangelion" unfolds in a dystopian future where Earth is under the constant threat of mysterious beings known as
-             "Angels." Humanity's last hope lies in the hands of NERV, 
-            a shadowy organization that deploys colossal biomechanical robots, the Evangelions, to defend against these
-             celestial invaders. Yet, this premise is just the tip of the iceberg.
-        </p>
-        <p>
-            "Neon Genesis Evangelion" unfolds in a dystopian future where Earth is under the constant threat of mysterious beings known as
-             "Angels." Humanity's last hope lies in the hands of NERV, 
-            a shadowy organization that deploys colossal biomechanical robots, the Evangelions, to defend against these
-             celestial invaders. Yet, this premise is just the tip of the iceberg.
-        </p>
-        <div class="box ">Div 3 (Fixed)</div>
-        <p>
-            "Neon Genesis Evangelion" unfolds in a dystopian future where Earth is under the constant threat of mysterious beings known as
-             "Angels." Humanity's last hope lies in the hands of NERV, 
-            a shadowy organization that deploys colossal biomechanical robots, the Evangelions, to defend against these
-             celestial invaders. Yet, this premise is just the tip of the iceberg.
-        </p>
-        <p>
-            "Neon Genesis Evangelion" unfolds in a dystopian future where Earth is under the constant threat of mysterious beings known as
-             "Angels." Humanity's last hope lies in the hands of NERV, 
-            a shadowy organization that deploys colossal biomechanical robots, the Evangelions, to defend against these
-             celestial invaders. Yet, this premise is just the tip of the iceberg.
-        </p>
-        <p>
-            "Neon Genesis Evangelion" unfolds in a dystopian future where Earth is under the constant threat of mysterious beings known as
-             "Angels." Humanity's last hope lies in the hands of NERV, 
-            a shadowy organization that deploys colossal biomechanical robots, the Evangelions, to defend against these
-             celestial invaders. Yet, this premise is just the tip of the iceberg.
-        </p>
-        <div class="box ">Div 4</div>
+        <!-- Verwende das Element element-content-box -->
+        <div class="element-content-box">
+            Content-Box
+        </div>
+
+        <!-- Verwende das Element element-border-box -->
+        <div class="element-border-box">
+            Border-Box
+        </div>
     </div>
 </body>
 </html>
