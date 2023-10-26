@@ -3,24 +3,40 @@
     <Title>ZweitesVideo</Title>
     <style>
 
-        .container {
-            
-            padding: 10px;
-            border: 2px solid black;
-            box-sizing: content-box; /* padding and border size will now be included in width and height*/
 
-        }
-        .container img { /* with the class-name at the beginning, it refers only to the ones that are inisde of an tag of the class "container"*/
+        .container { /* with the class-name at the beginning, it refers only to the ones that are inisde of an tag of the class "container"*/
             display: block;
             width: 100%; /* it takes the full width of the image */
             height: auto; /*calcualtes the hight of the img considering hte window isze of the browser*/
+
+            padding: 10px;
+            border: 2px solid black;
+            box-sizing: content-box; /* padding and border size will now be included in width and height*/
         }
+
+        
+        /* Initially hide the image when the checkbox is not checked */
+
+
+        .showImage{
+            visibility:hidden;
+            width: 100%; /* it takes the full width of the image */
+            height: auto; /*calcualtes the hight of the img considering hte window isze of the browser*/
+
+           
+        }
+        #imageCheckbox:checked ~ .container > .showImage{
+            visibility:visible;
+        }
+
     </style>
 </head>
 
 <body>
     <h1>Übung 2.2</h1>
+    <input type="checkBox" id ="imageCheckbox">
+    <label for= "imageCheckbox">hide or show checkbox</label>
     <div class = "container">
-        <img  src="https://kaul.inf.h-brs.de/ccm/we/ws23/resources/assets/h-brs.jpg" alt=" a picture of Hochschule Bon Rhein-Sieg"></a>
+            <img class="showImage" id = "displayImage" src="https://kaul.inf.h-brs.de/ccm/we/ws23/resources/assets/h-brs.jpg" alt=" a picture of Hochschule Bon Rhein-Sieg"></a>
     </div>
 </body>
