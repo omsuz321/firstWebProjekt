@@ -11,7 +11,6 @@
 
             padding: 10px;
             border: 2px solid black;
-            box-sizing: content-box; /* padding and border size will now be included in width and height*/
         }
 
         
@@ -21,10 +20,10 @@
         .showImage{
             visibility:hidden;
             width: 100%; /* it takes the full width of the image */
-            height: auto; /*calcualtes the hight of the img considering hte window isze of the browser*/
-
-           
+            height: auto; /*calcualtes the hight of the img considering hte window isze of the browser*/     
         }
+
+
         #imageCheckbox:checked ~ .container > .showImage{
             visibility:visible;
         }
