@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      display: flex;
+      width: 400px; /* Container-Breite auf 400px festgelegt */
+    }
+    
+    .item {
+      flex: 1; /* Gleichmäßige Aufteilung des verfügbaren Raums, flex-grow und flex-shrink auf den Standardwert 1 */
+      padding: 10px;
+      border: 1px solid black;
+    }
+    
+    .item:nth-child(2) {
+      flex-shrink: 0; /* Das zweite Element schrumpft nicht. */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">Element 1</div>
+    <div class="item">Element 2 (flex-shrink: 0)</div>
+    <div class="item">Element 3</div>
+  </div>
+</body>
+</html>
