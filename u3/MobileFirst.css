@@ -1,3 +1,87 @@
-.container {
+.container1 {
+    display: flex;
+    gap: 10px;
+    margin-left: 5vh;
+    margin-right: 5vh;
+}
+
+.firstItem {
+    background-color: red;
+    flex-basis: 100%;
+    height: 20vh;
+    margin-bottom: 3vh;
+}
+
+.secondItem {
+    flex-basis: 25%;
+    height: 100vh;
+    background-color: green;
+}
+
+.thirdItem {
+    flex-basis: 50%;
+    height: 100vh;
+    background-color: blue;
+}
+
+.fourthItem {
+    flex-basis: 25%;
+    height: 100vh;
+    background-color: purple;
+}
+@media screen and (max-width: 480px) {
+    .container1{
+        margin-left: 2vh;
+        margin-right: 2vh;
+        gap:0px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+        
+        
+    }
+    .secondItem{
+        flex-basis: 23%;
+
+
+    }
+    .thirdItem{
+        flex-basis: 75%;
+    }
+    .fourthItem{
+        margin-top: 2vh;
+        flex-basis: 100vw;
+        height: 15vh;
+    }
+
+
+    @media screen and (max-width: 350px){
+        .container1{
+            margin-left: 0vh;
+            margin-right: 0vh;
+            gap:0px;
+            flex-wrap: wrap;
+        }
+        .firstItem{
+            margin-bottom: 0vh;
+        }
+        .secondItem{
+            flex-basis: 100%;
+            height: 20vh;
+        }
+        .thirdItem{
+            flex-basis: 100%;
+            
+        }
+        .fourthItem{
+            margin-top: 0vh;
+            flex-basis: 100%;
+            height: 20vh;
+        }
+        
+
+
+    }
     
 }
+

@@ -1,42 +1,18 @@
 <!DOCTYPE html>
-
 <html>
     <head>
-        <style>
-            .contianer {
-                display: flex;
-                
-                
-                flex-wrap: wrap;/* so there is a warp if the row is has no space */
-
-            }
-            
-            .firstItem{
-                background-color: red;
-                flex-basis: 100%;
-                height: 20vh;
-                margin-bottom: 1vh; /*thus the there is some space bwtween first element and the others*/
-            }
-            .secondItem{
-                flex-basis:25%;
-                height: 100vh;
-                background-color: green;
-            }
-            .thirdItem{
-                flex-basis: 50%;
-                height: 100vh;
-                background-color: blue;
-            }
-        </style>
-
+        <link rel="stylesheet" href="MobileFirst.css">
     </head>
 
     <body>
-        <div class="contianer"> 
+        <div class="container1">
             <div class="firstItem"></div>
+        </div>
+        <div class="container1"> <!--if i wpuld have used flex-wrap:wrap istead of to div to seperate tht upper red-block from the others, then there would be a wrap and wouldnt look like the given picture-->
             <div class="secondItem"></div>
             <div class="thirdItem"></div>
+            <div class="fourthItem"></div>
         </div>
-        
     </body>
 </html>
+
