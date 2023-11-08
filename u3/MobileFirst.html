@@ -1,13 +1,89 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <style></style>
+  <head>
+    <style>
+      .container {
+        display: grid;
+        grid-template-areas:
+          "redBlock"
+          "greenBlock"
+          "blueBlock"
+          "purpleBlock";
+        grid-template-rows: 15vh 15vh 100vh 15vh;
 
-    </head>
+        
+        /*it fills the gapes*/
+        box-sizing: border-box;
+        width: 90%; /* Reduce the width to create space on both sides */
+        margin:  auto; /* Center the container horizontally */
+        height: 100vh;
+  
+      }
+      .redBlock {
+        
+        grid-area: redBlock;
+        background-color: red;
+        
+      }
+      .greenBlock {
+        grid-area: greenBlock;
+        background-color: green;
+      }
+      .blueBlock {
+        grid-area: blueBlock;
+        background-color: blue;
+      }
+      .purpleBlock {
+        grid-area: purpleBlock;
+        background-color: purple;
+      }
 
-    <body>
+      @media screen and (min-width: 800px){
+        .container {
+ 
+            grid-template-areas:
+              " redBlock redBlock redBlock "
+              "greenBlock blueBlock purpleBlock";
+            grid-template-rows: 15% 75%;
+            grid-template-columns: 20% 60% 20%;
+            gap: 2vh;
+
+
+        }
+
         
-        
-    </body>
+      }
+
+      @media screen and (min-width: 600px) {
+        /* Add responsive styles here if needed */
+        .container {
+ 
+            grid-template-areas:
+              "redBlock redBlock"
+              "greenBlock blueBlock" 
+              "purpleBlock purpleBlock";
+            grid-template-rows: 15vh 150vh 15vh;
+            grid-template-columns: 25% ;
+
+            gap: 1vh;
+
+
+            
+        }
+        .redBlock{
+            margin-bottom: 5px;
+
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="redBlock"></div>
+      <div class="greenBlock"></div>
+      <div class="blueBlock"></div>
+      <div class="purpleBlock"></div>
+    </div>
+  </body>
 </html>

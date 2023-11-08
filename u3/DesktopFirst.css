@@ -29,7 +29,10 @@
     height: 100vh;
     background-color: purple;
 }
-@media screen and (max-width: 480px) {
+
+
+
+@media screen and (max-width: 600px) {
     .container1{
         margin-left: 2vh;
         margin-right: 2vh;
@@ -55,33 +58,33 @@
     }
 
 
-    @media screen and (max-width: 350px){
-        .container1{
-            margin-left: 0vh;
-            margin-right: 0vh;
-            gap:0px;
-            flex-wrap: wrap;
-        }
-        .firstItem{
-            margin-bottom: 0vh;
-        }
-        .secondItem{
-            flex-basis: 100%;
-            height: 20vh;
-        }
-        .thirdItem{
-            flex-basis: 100%;
-            
-        }
-        .fourthItem{
-            margin-top: 0vh;
-            flex-basis: 100%;
-            height: 20vh;
-        }
-        
 
-
-    }
     
 }
+@media screen and (max-width: 500px){
+    .container1{
+        margin-left: 0vh;
+        margin-right: 0vh;
+        gap:0px;
+        flex-wrap: wrap;
+    }
+    .firstItem{
+        margin-bottom: 0vh;
+    }
+    .secondItem{
+        flex-basis: 100%;
+        height: 20vh;
+    }
+    .thirdItem{
+        flex-basis: 100%;
+        
+    }
+    .fourthItem{
+        margin-top: 0vh;
+        flex-basis: 100%;
+        height: 20vh;
+    }
+    
 
+
+}

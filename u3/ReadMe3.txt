@@ -6,3 +6,8 @@ flex exercise
 
     used for the 2nd and 3rd less then 10% width( space-basis),so space between wpuld create a space between them
     used maring so the 4th would also have a space between them
+
+
+
+
+    i somtimes added more then 100vh so there is a vertical scroll effect
