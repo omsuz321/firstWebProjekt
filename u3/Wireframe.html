@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .outterContainer {
+                display: grid;
+                grid-template-rows: auto 1fr auto;
+                grid-template-columns: repeat(2, 1fr);
+                
+                
+                
+                /* Remove the redundant line: grid-template:rows repeat(4,1fr); */
+            }
+
+            :root{
+                --background-color: grey; /* ksut wanted to try it out*/
+            }
+            .headline {
+                
+                 /* Center text horizontally */
+                display:flex;
+                justify-content: center;
+                grid-column: 1 / span 2;
+                grid-row: 2;
+                background-color: var(--background-color);
+
+                
+            }
+            .bar {
+                grid-area: bar;
+                place-items: center;
+                background-color: grey;
+                justify-self: center;
+                align-self: center;
+                grid-column: 1 / span 2;
+                grid-row: 1;
+            }
+            .bottem {
+                grid-area: bottem;
+                align-self: end;
+                justify-self: center;
+                grid-column: 1 / span 2;
+                grid-row: 4;
+                height: 10vh;
+            }
+            div {
+                border-radius: 10px;
+                border: 2px solid #000;
+                display: flex;
+                
+                
+     
+            }
+            .outterContainer > *{
+                background-color: var(--background-color);
+            }
+
+
+
+
+        </style>
+    </head>
+
+    <body>
+        <div class="outterContainer">
+            <div class="bar">d</div>
+            <div class="headline"><h1>You don't know JavaScript</h1></div>
+            <div class="innerContainer" >
+                <div style="width: 15%; height:auto"></div> <!-- so it pushes the pic a little form the eadge ( we are inside a flex where every item is within a row by default )-->
+                <img style="width: 40vh; "   src="https://kaul.inf.h-brs.de/ccm/we/ws23/resources/assets/landing-img.png" alt="Beschreibung des Bildes">
+            </div>
+            <div>
+                <div>
+                    <!-- Content for the second inner container -->
+                </div>
+            </div>
+            <div class="bottem"></div>
+        </div>
+    </body>
+</html>
