@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>textContent vs. innerHTML Example</title>
+</head>
+<body>
+  <div id="exampleElement"></div>
+
+  <script>
+    // Using textContent
+    var textContentExample = document.getElementById('exampleElement');
+    textContentExample.textContent = '<b>This will be treated as text, not as bold.</b>';
+
+    // Using innerHTML
+    var innerHTMLExample = document.createElement('div');
+    innerHTMLExample.innerHTML = '<b>This will be treated as bold.</b>';
+    document.body.appendChild(innerHTMLExample);
+  </script>
+</body>
+</html>

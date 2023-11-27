@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Comparison between different Content Properties</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .container > div {
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+        <div onclick="displayContent('innerHTML')">click for innerHTML time</div>
+        <div onclick="displayContent('innerText')">click for innerText time</div>
+        <div onclick="displayContent('textContent')">click for textContent time</div>
+        <div onclick="displayContent('outerHTML')">click for outerHTML time</div>
+   </div>
+
+    <script>
+        function displayContent(displayProperty) {
+            var triggeredElement = event.target;
+            var newElement = document.createElement("div");
+            newElement.innerText = testTime(displayProperty);
+            triggeredElement.appendChild(newElement);
+        }
+    </script>
+    <script src="PerformanceMeasurements.js"></script>
+</body>
+</html>
