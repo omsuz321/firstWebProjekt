@@ -1,33 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Handling Example</title>
-    <style>
-        div {
-            background-color: yellow;
-            border: thin solid black;
-            padding: 10px;
-            display: inline-block;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>textContent vs. innerHTML Example</title>
 </head>
 <body>
+  <div id="exampleElement"></div>
 
-    <div id="a">A
-        <div id="b">B</div>
-        <div id="c">C</div>
-    </div>
+  <script>
+    // Using textContent
+    var textContentExample = document.getElementById('exampleElement');
+    textContentExample.textContent = '<b>This will be treated as text, not as bold.</b>';
 
-    <script>
-        for (const div of document.querySelectorAll('div')) {
-            div.addEventListener('click', log, true);
-        }
-
-        function log() {
-            console.log(this.id);
-        }
-    </script>
+    // Using innerHTML
+    var innerHTMLExample = document.createElement('div');
+    innerHTMLExample.innerHTML = '<b>This will be treated as bold.</b>';
+    document.body.appendChild(innerHTMLExample);
+  </script>
 </body>
 </html>
