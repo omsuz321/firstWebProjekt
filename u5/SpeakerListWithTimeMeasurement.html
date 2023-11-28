@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rednerliste</title>
+    <style>
+        .container {
+            /* Just to make the div a little offset from the border of the viewport */
+            padding-left: 5%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rednerliste</h1>
+    <label for="PersonName"><strong> New speaker: </strong></label>
+    <input type="text" id="person-name" name="first-name">
+    <button id="myButton">Add</button>
+    <div class="container" id="containerForNames"></div>
+
+    <script>
+        var containerForNames = document.getElementById("containerForNames");
+        var button = document.getElementById("myButton");
+        var newElement;
+        var personName;
+        var currenttime;
+
+        function timer() {
+            personName = document.getElementById("person-name").value;
+            
+            //prevents that a neew name with timer gets added to the container and prevents the execution of the whole proccess
+            if(personName === "")
+                return;
+            // Creating a new li element
+            newElement = document.createElement("li");
+
+            // Retrieving the value from the input field
+           
+
+            // Appending the new li element to the container
+            containerForNames.appendChild(newElement);
+
+            // Set up an interval to call the timer function every second (1000 milliseconds)
+            currenttime = new Date();
+            setInterval(
+                displayTimer(newElement, personName, currenttime), 1000); // if i wrappt the the function with an annoynmouse function, than this would prevernt immedaite execution, becoaue of the paramerters. if "()" are present, the
+                                                                            //the functins gets called, to prevent that a annonoumes funcitons can help
+
+            // Clear the input field after adding the name
+            document.getElementById("person-name").value = "";
+        }
+
+        function displayTimer(element, name, time) {
+            if (containerForNames.lastElementChild !== element) {
+                // A new element must have been inserted, so the current timer can be stopped
+                newElement = document.createElement("li");
+                containerForNames.appendChild(newElement);
+                clearInterval(currenttime);
+                currenttime = new Date();
+            }
+
+            element.innerHTML = "<strong>" + name + " - " + currenttime.toLocaleTimeString() + "</strong>";
+        }
+
+        // Adding an event listener where the function gets called if the button with the text field "Add" is clicked
+        button.addEventListener("click", timer);
+    </script>
+</body>
+</html>
