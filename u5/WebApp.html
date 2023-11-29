@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TopSort als Web-App</title>
+    <script src="CommonFunction.js"></script>
+    <script src="../u4/TopSort.js"></script>
+    <link rel="stylesheet" href="WebApp.css"> 
+</head>
+<body>
+    
+    <h1>TopSort als Web-App</h1>
+    
+    <label for="enter-rule">TopSort als Web-App</label>
+    <input id="enter-rule" type="text">
+    <button id="my-button-rule">Add rule</button>
+    <div id="ruleSet" class="container"></div>
+    
+    <div id="show-result" class="container">
+        
+    </div>
+    <button id="my-button-topsort">Do top sort</button>
+   
+    <script>
+        const rule = document.getElementById("enter-rule");
+        const ruleButton = document.getElementById("my-button-rule");
+        const sortButton = document.getElementById("my-button-topsort");
+
+        // Collection for the rules
+        const ruleSet = document.getElementById("ruleSet");
+        // Output after the sort
+        const resultContainer = document.getElementById("show-result"); 
+
+        function getRuleToRuleSet() {
+            // If no input, do not execute the function
+            if (rule.value === "") return;
+
+            // If the format is not right for the rule, do nothing
+            if (!rule.value.includes("[") || !rule.value.includes("]")) return;
+
+            addRule(ruleSet, rule.value);
+            // Empty the input field
+            rule.value = "";
+        }
+
+        function doTopSort() {
+            // Returns an array-like collection that can be accessed with "[]"
+            var arrayLike = ruleSet.children;
+            var dependencies = getInnerText(ruleSet);
+            return topsort(dependencies);
+        }
+
+        ruleButton.addEventListener("click", getRuleToRuleSet);
+        sortButton.addEventListener("click", function () {
+            // Use resultContainer instead of the global result variable and convert the array to a string with "join"
+            resultContainer.innerText = doTopSort();
+        });
+    </script>
+
+</body>
+</html>
