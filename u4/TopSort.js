@@ -108,12 +108,8 @@ var dependencies = [
     ['C', 'D']
 ];
 
-const lazySort = new LazyTopologicalSort(dependencies);
 
-// Iteration über das Iterationsprotokoll
-for (const node of lazySort) {
-    console.log(node);
-}
+
 
 
 function topsort(dependencies){
@@ -134,6 +130,15 @@ var dependencies = [
     ['B', 'C'],
     ['C', 'D']
 ];
+
+
+const lazySort = new LazyTopologicalSort(dependencies);
+
+// Iteration über das Iterationsprotokoll
+for (const node of lazySort) {
+    console.log(node);
+}
+
 
 var result = topsort(dependencies);
 console.log(result);
