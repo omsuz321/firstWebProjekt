@@ -8,20 +8,23 @@ class Priority{
             let sort = new LazyTopologicalSort(this.dependencies);
             return sort[Symbol.iterator]();
             };
+
         
     }
+    *iteratorViaGeneraor() {
+      const iterator = this[Symbol.iterator](); // to keep using same iterator
+      let result;//  = iterator.next();
+      //assigns and checks, if there is a value
+      while( !(result = iterator.next()).done ){
+        //return the value for this iterration
+        yield result.value; 
+      }
+    }
+
      
 }
 
-// let v = new Vorrang([
-//     ['A', 'B'],
-//     ['B', 'C'],
-//     ['C', 'D']
-// ]);
 
-// for (const node of v){
-//     console.log(node);
-// }
 const studentenLeben = new Priority( [
     [ "schlafen", "studieren" ],
     [ "essen", "studieren" ],
@@ -30,4 +33,7 @@ const studentenLeben = new Priority( [
 
   for ( const next of studentenLeben ) {
     console.log( next );
+  }
+  for (const next of studentenLeben.iteratorViaGeneraor()){
+    console.log(next);
   }
