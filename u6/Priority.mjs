@@ -25,15 +25,26 @@ class Priority{
 }
 
 
+
+
 const studentenLeben = new Priority( [
     [ "schlafen", "studieren" ],
     [ "essen", "studieren" ],
     [ "studieren", "prüfen" ]
   ] )
 
-  for ( const next of studentenLeben ) {
-    console.log( next );
-  }
-  for (const next of studentenLeben.iteratorViaGeneraor()){
-    console.log(next);
-  }
+  //checks if both functions work the same
+  console.assert(
+    //using  "..." here results in getting all the values from the function into in array. 
+    [...studentenLeben.iteratorViaGeneraor()].toString() === 
+      [...studentenLeben[Symbol.iterator]()].toString(),
+    "iteratorViaGeneraor does not match the original iterator."
+  );
+  
+  
+  // for ( const next of studentenLeben ) {
+  //   console.log( next );
+  // }
+  // for (const next of studentenLeben.iteratorViaGeneraor()){
+  //   console.log(next);
+  // }
