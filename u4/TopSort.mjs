@@ -43,7 +43,7 @@
 //     return result;
 // }
 
-class LazyTopologicalSort {
+export default class LazyTopologicalSort {
     constructor(dependencies) {
         this.graph = new Map();
         this.visited = [];
@@ -132,13 +132,13 @@ var dependencies = [
 ];
 
 
-const lazySort = new LazyTopologicalSort(dependencies);
+// const lazySort = new LazyTopologicalSort(dependencies);
 
-// Iteration über das Iterationsprotokoll
-for (const node of lazySort) {
-    console.log(node);
-}
+// // Iteration über das Iterationsprotokoll
+// for (const node of lazySort) {
+//     console.log(node);
+// }
 
 
-var result = topsort(dependencies);
-console.log(result);
+// var result = topsort(dependencies);
+// console.log(result);
