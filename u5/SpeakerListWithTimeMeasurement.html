@@ -23,19 +23,27 @@
         var newElement;
         var personName;
         var intervalId; // Store the interval ID
+        var time; // to keep the timer for the timer function
 
         function timer() {
-            personName = document.getElementById("person-name").value;
+            
+           
             
             // Prevents that a new name with timer gets added to the container and prevents the execution of the whole process
-            if(personName === "")
+            //so no new name was added
+            if(document.getElementById("person-name").value === "")
                 return;
+            personName = document.getElementById("person-name").value;
 
             // Creating a new li element
             newElement = document.createElement("li");
 
             // Appending the new li element to the container
             containerForNames.appendChild(newElement);
+            
+            // Set the time to midnight (00:00:00)
+            time = new Date();
+            time.setHours(0, 0, 0);
 
             // Set up an interval to call the displayTimer function every second (1000 milliseconds)
             intervalId = setInterval(function () {
@@ -47,7 +55,9 @@
         }
 
         function displayTimer(element, name) {
-            element.innerHTML = "<strong>" + name + " - " + new Date().toLocaleTimeString() + "</strong>";
+            // Add one second to the time
+            time.setSeconds(time.getSeconds() + 1);
+            element.innerHTML = "<strong>" + name + " - " + time.toLocaleTimeString() + "</strong>";
         }
 
         // Adding an event listener where the function gets called if the button with the text field "Add" is clicked
