@@ -2,13 +2,10 @@ function addChild(parent, elementType) {
     return parent.appendChild(document.createElement(elementType));
 }
 
-function insertContent(element, contentProperty, content) {
+export function insertContent(element, contentProperty, content) {
     element[contentProperty] = content;
 }
-// Gets the container with the unsorted items and sorts them according to the rule set
-function sortSet(container, ruleSet) {
-    // Implement sorting logic here
-}
+
 
 
 // Inserts the rule to the rule Container

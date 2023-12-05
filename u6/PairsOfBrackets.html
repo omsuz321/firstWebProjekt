@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pairs of Brackets</title>
+
+</head>
+
+<body>
+    <h1>Pairs of Brackets</h1>
+    <input type="text" id="input-text">
+    <div id="show-input"></div>
+
+    <script type="module">
+        import { executeAfterTimer, updateContent, checkBrackets } from './PairsOfBrackets.js'; // i have to import the function from the js file
+
+
+        var userInputFiled = document.getElementById('input-text');
+        var showInputContainer = document.getElementById('show-input');
+        var typingTimer = null;
+
+        executeAfterTimer(userInputFiled, typingTimer, () => { // id parssed a arrow function , so i can insert inside of it the code i want to execute after the timer
+        var content = userInputFiled.value;
+        
+        if(checkBrackets(content)){
+            userInputFiled.style.backgroundColor = "green";
+        }else{
+            userInputFiled.style.backgroundColor = "red";
+        }
+
+        
+        //updateContent(content, showInputContainer, typingTimer); 
+        });
+
+    </script>
+</body>
+</html>
