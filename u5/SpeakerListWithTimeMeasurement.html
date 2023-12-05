@@ -22,43 +22,32 @@
         var button = document.getElementById("myButton");
         var newElement;
         var personName;
-        var currenttime;
+        var intervalId; // Store the interval ID
 
         function timer() {
             personName = document.getElementById("person-name").value;
             
-            //prevents that a neew name with timer gets added to the container and prevents the execution of the whole proccess
+            // Prevents that a new name with timer gets added to the container and prevents the execution of the whole process
             if(personName === "")
                 return;
+
             // Creating a new li element
             newElement = document.createElement("li");
-
-            // Retrieving the value from the input field
-           
 
             // Appending the new li element to the container
             containerForNames.appendChild(newElement);
 
-            // Set up an interval to call the timer function every second (1000 milliseconds)
-            currenttime = new Date();
-            setInterval(
-                displayTimer(newElement, personName, currenttime), 1000); // if i wrappt the the function with an annoynmouse function, than this would prevernt immedaite execution, becoaue of the paramerters. if "()" are present, the
-                                                                            //the functins gets called, to prevent that a annonoumes funcitons can help
+            // Set up an interval to call the displayTimer function every second (1000 milliseconds)
+            intervalId = setInterval(function () {
+                displayTimer(newElement, personName);
+            }, 1000);
 
             // Clear the input field after adding the name
             document.getElementById("person-name").value = "";
         }
 
-        function displayTimer(element, name, time) {
-            if (containerForNames.lastElementChild !== element) {
-                // A new element must have been inserted, so the current timer can be stopped
-                newElement = document.createElement("li");
-                containerForNames.appendChild(newElement);
-                clearInterval(currenttime);
-                currenttime = new Date();
-            }
-
-            element.innerHTML = "<strong>" + name + " - " + currenttime.toLocaleTimeString() + "</strong>";
+        function displayTimer(element, name) {
+            element.innerHTML = "<strong>" + name + " - " + new Date().toLocaleTimeString() + "</strong>";
         }
 
         // Adding an event listener where the function gets called if the button with the text field "Add" is clicked
