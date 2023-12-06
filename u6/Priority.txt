@@ -1,0 +1,5 @@
+map will be used to track the log 
+
+we use Object.keys to listen, if the an certan instance varible gets asseced
+
+use a set tot keep track what aleady was proccessed

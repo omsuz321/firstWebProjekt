@@ -1,50 +1,65 @@
-import  LazyTopologicalSort  from "../u4/TopSort.mjs";
-class Priority{
-    
-    constructor(dependencies){
-        this.dependencies = dependencies ;
-        //i also yould have crated an instance variable 
-        this[Symbol.iterator] = () =>{ // if i do not use "this", this objet does not get enuerable, so it can not be found by Object.keys(), even if it does exist
-            let sort = new LazyTopologicalSort(this.dependencies);
-            return sort[Symbol.iterator]();
-            };
+import LazyTopologicalSort from "../u4/TopSort.mjs";
 
-        
-    }
-    *iteratorViaGeneraor() {
-      const iterator = this[Symbol.iterator](); // to keep using same iterator
-      let result;//  = iterator.next();
-      //assigns and checks, if there is a value
-      while( !(result = iterator.next()).done ){
-        //return the value for this iterration
-        yield result.value; 
-      }
-    }
+class Priority {
+  constructor(dependencies) {
+    this.dependencies = dependencies;
+    this[Symbol.iterator] = () => {
+      let sort = new LazyTopologicalSort(this.dependencies);
+      return sort[Symbol.iterator]();
+    };
+  }
 
-     
+  *iteratorViaGeneraor() {
+    const iterator = this[Symbol.iterator]();
+    let result;
+    while (!(result = iterator.next()).done) {
+      yield result.value;
+    }
+  }
 }
 
+const handler = {
+  iterator: null, // Store the iterator here
 
+  get: function (target, key, receiver) {
+    if (key === "iteratorViaGeneraor") {
+      if (!this.iterator) {
+        this.iterator = target.iteratorViaGeneraor(); // Create the iterator if it doesn't exist
+      }
 
+      loggingTable.set([`k${loggingTable.size}`], `there are  ${target.dependencies.length - loggingTable.size} left `);
+      result.add(this.iterator.next().value);
+    }
+  },
+};
 
 const studentenLeben = new Priority( [
-    [ "schlafen", "studieren" ],
-    [ "essen", "studieren" ],
-    [ "studieren", "prüfen" ]
-  ] )
+  [ "schlafen", "studieren" ],
+  [ "essen", "studieren" ],
+  [ "studieren", "prüfen" ]
+]);
 
-  //checks if both functions work the same
-  console.assert(
-    //using  "..." here results in getting all the values from the function into in array. 
-    [...studentenLeben.iteratorViaGeneraor()].toString() === 
-      [...studentenLeben[Symbol.iterator]()].toString(),
-    "iteratorViaGeneraor does not match the original iterator."
-  );
-  
-  
-  // for ( const next of studentenLeben ) {
-  //   console.log( next );
-  // }
-  // for (const next of studentenLeben.iteratorViaGeneraor()){
-  //   console.log(next);
-  // }
+let loggingTable = new Map();
+let allAttributes = Object.keys(studentenLeben);
+let logger = new Proxy(studentenLeben, handler);
+let result = new Set();
+
+
+
+
+
+console.log("All Attributes:", allAttributes);
+console.assert(allAttributes.includes('dependencies'), 'Die Vorrang-Klasse sollte ein "dependencies"-Attribut haben.');
+
+
+// Test der Proxy-Logging-Funktionalität
+logger.iteratorViaGeneraor;
+console.assert(loggingTable.size > 0, 'Das Logging sollte mindestens einen Eintrag in der Tabelle haben.');
+console.assert(result.size > 0, 'Das Ergebnis-Set sollte mindestens einen Wert enthalten.');
+
+console.log(result);
+logger.iteratorViaGeneraor;
+logger.iteratorViaGeneraor;
+
+console.log(result);
+
