@@ -1,0 +1,62 @@
+
+/*crates the puter containter*/
+.grid-container {
+    display: grid;
+    border: 1px solid black;
+    /**definig sectors inside of the grid*/
+    grid-template-areas:
+        "upper-menue upper-menue upper-menue upper-menue"
+        "left-bar document document right-bar"
+        "submenu submenu submenu submenu";
+    height: 100vh; /* 100% of the viewport height */
+    width: 100vw; /* 100% of the viewport width */
+    margin-left: 3vh;
+    margin-right: 5vh;
+    grid-template-columns: auto; /* Automatically adjust column size based on content */
+    grid-template-rows: 10% auto 10%;
+    background-color: #C28283;
+    border-radius: 10px;
+
+    
+}
+
+.grid-item {
+    padding: 10px;  
+    border: 1px solid #ddd;
+
+}
+.upper-menue {
+    grid-area: upper-menue;
+    background-color: #C24F4F;
+    border-radius: 10px 10px 0 0; /* Top-left and top-right corners rounded */
+    text-align: center;
+}
+
+
+
+.left-bar {
+    grid-area: left-bar;
+    background-color: #C28283;
+}
+
+.document {
+    grid-area: document;
+    background-color: #95D2F3;
+}
+
+.right-bar {
+    grid-area: right-bar;
+    background-color: #C28283;
+}
+
+.submenu {
+    grid-area: submenu;
+    background-color: black;
+    border-radius:  0 0 10px 10px; /* Top-left and top-right corners rounded */
+}
+
+div{
+    border: 1px solid black;
+
+
+}

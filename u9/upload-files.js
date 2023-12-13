@@ -47,4 +47,3 @@ export async function getLines(){
 
 
 
-getLines().then(result => console.log(result));
