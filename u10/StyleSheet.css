@@ -1,0 +1,10 @@
+.center-horizontal {
+    display: flex;
+    align-items: center;/* to center it along the main axis*/
+    justify-content: space-evenly;/* */
+
+    height: 90vh;
+    width: 98vw;
+    
+    
+  }
