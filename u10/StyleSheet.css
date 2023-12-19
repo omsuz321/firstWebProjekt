@@ -1,4 +1,4 @@
-.center-horizontal {
+.center-in-view-port {
     display: flex;
     align-items: center;/* to center it along the main axis*/
     justify-content: space-evenly;/* */

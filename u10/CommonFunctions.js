@@ -1,4 +1,4 @@
 function setSVGSize({height, width, element}) {
-    element.setAttribute("width", height);
-    element.setAttribute("height", width);
+    element.setAttribute("width", width);
+    element.setAttribute("height", height);
 }
