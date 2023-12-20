@@ -5,11 +5,113 @@
         <link rel="stylesheet" href="StyleSheet.css">
     </head>
     <body>
-
+        <h2 id="headline">now: X</h2>
         <div class="center-in-view-port" >
+            <svg id="viewBox" xmlns="http://www.w3.org/2000/svg" width="730" height="730" viewBox="0 0 730 730" fill="none">
+                
+                
+                
+                <rect x="10" y="5" width="710" height="710" fill="black"/>
+                <defs>
+                    <g id="match-field">
+                        <rect id="0" x="0" y="0" width="240" height="240" fill="white"/>
+                        <rect id="1" x="245" y="0" width="240" height="240" fill="white"/>
+                        <rect id="2" x="490" y="0"width="240" height="240" fill="white"/>
+                        <rect id="3" x="0"  y="245" width="240" height="240" fill="white"/>
+                        <rect id="4" x="245" y="245" width="240" height="240" fill="white"/>
+                        <rect id="5" x="490" y="245" width="240" height="240" fill="white"/>
+                        <rect id="6" x="0" y="491" width="240" height="240" fill="white"/>
+                        <rect id="7" x="245" y="491" width="240" height="240" fill="white"/>
+                        <rect id="8" x="490" y="491" width="240" height="240" fill="white"/>
+                    </g>
+                </defs>
+                <defs>
+                    <circle id="my-circle" cx="120" cy="120" r="100" stroke="black" stroke-width="10"/>
+                </defs>
+                
+                <use href="#match-field" />
+                <!--  <use href="#my-circle" />-->
+                
+
+                </svg>
             
         </div>
+        <script src="CommonFunctions.js"></script>
+        <script>
+            const winningCombination = [
+                                        [ "0", "1","2"],
+                                        [ "3", "4", "5" ],
+                                        [ "6", "7", "8" ],
+                                        [ "0", "3", "6" ],
+                                        [ "1", "4", "7" ],
+                                        [ "2", "5", "8" ],
+                                        [ "0", "4", "8" ],
+                                        [ "2", "4", "6" ],
+                                       ];
+            function checkWin(playerMoves, winningCombinations) {
+                for (const combination of winningCombinations) {
+                    if (combination.every(move => playerMoves.includes(move))) {
+                        return true;
+                    }
+                }
+                return false;
+            }                      
 
+
+            function ceckIfFieldIsFree(field){
+                return ! (player1.includes(field) || player2.includes(field));
+            }
+            
+            const viewBox = document.getElementById("viewBox");
+            const matchField = document.getElementById("match-field").childNodes;
+            
+            // keeps track of hte current player movment
+            let player1 = [];
+            let player2 = [];
+            let currentPlayer;
+            let won;
+
+            let symbole = "X";
+
+            for (const field of matchField) {
+                field.addEventListener("click", () => {
+                    
+                    //if already taken, wait for hte next roud 
+                    if(!ceckIfFieldIsFree(field.id))
+                        return ;
+                    if(won)
+                        return;
+
+                        
+                    if (symbole === "X") {
+                        addCross({ "viewBox": viewBox, "field": field });
+                        symbole = "O";
+                        currentPlayer = player1;
+
+                        
+                    } else  {
+                        addCircle({ "viewBox": viewBox, "field": field });
+                        symbole = "X";
+                        currentPlayer = player2;
+                    }
+                    currentPlayer[currentPlayer.length] = field.id
+
+                    if(checkWin(currentPlayer, winningCombination)){
+                        let player = symbole !== "X" ? "Player1" : "Player2";
+                        document.getElementById("headline").innerText = `${player} won`;
+                        won = true;
+
+                        return;
+                    }
+                    if(player1.length + player2.length >= 9){
+                        document.getElementById("headline").innerText = "draw";
+                        return;
+                    }
+                    document.getElementById("headline").innerText = `now: ${symbole}`;
+                    
+                });
+            }
+        </script>
 
     </body>
 </html>

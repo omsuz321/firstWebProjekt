@@ -38,6 +38,7 @@ function getInnerText(parent){
     return innerTextOfChild;
 }
 
+export { addChild};
 
 
  
