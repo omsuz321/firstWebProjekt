@@ -1,0 +1,24 @@
+{
+  "name": "firstwebprojekt",
+  "version": "1.0.0",
+  "description": "this projects purpose is to learn about web development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omsuz321/firstWebProjekt.git"
+  },
+  "keywords": [
+    "first",
+    "web",
+    "project"
+  ],
+  "author": "Ömer Süzen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omsuz321/firstWebProjekt/issues"
+  },
+  "homepage": "https://github.com/omsuz321/firstWebProjekt#readme"
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Balkendiagram</title>
+</head>
+<body>
+<h1>Stromverbauch in Deutschland</h1>
+<p>Stand: <span id="stand"></span> </p>
+<p>Von: <span id="von"></span></p>
+<p>Bis: <span id="bis"></span></p>
+<svg xmlns="http://www.w3.org/2000/svg" width="1016" height="678" viewBox="0 0 1016 678" fill="none">
+    <line id="y-achse" x1="111.5" y1="73.999" x2="112.502" y2="552.999" stroke="black"/>
+    <line id="x-achse" x1="112" y1="552.5" x2="950" y2="552.5" stroke="black"/>
+</svg>
+
+<script>
+    let data;
+    let widthPerSection;
+    fetch("./data.xml")
+        .then((result) => {
+            return result.text();
+        })
+        .then(text => {
+            const xml = new DOMParser().parseFromString(text, "text/xml");
+            data = xml.querySelectorAll("baustein");
+            data = Array.from(data);
+
+            // Accessing the width of the SVG line
+            const yAchse = document.getElementById("y-achse");
+            widthPerSection = yAchse.getBoundingClientRect().width / data.length;
+            console.log(widthPerSection);
+
+            data.map((e) => console.log(e));
+
+            document.getElementById("stand").innerHTML = xml.querySelector("stand").textContent;
+            document.getElementById("von").innerHTML = xml.querySelector("von").textContent;
+            document.getElementById("bis").innerHTML = xml.querySelector("bis").textContent;
+        });
+</script>
+</body>
+</html>
