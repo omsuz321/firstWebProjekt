@@ -1,10 +1,12 @@
 {
   "name": "firstwebprojekt",
   "version": "1.0.0",
-  "description": "this projects purpose is to learn about web development",
+  "description": "This project combines elements from 'firstwebprojekt' and 'u0'",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/omsuz321/firstWebProjekt/issues"
   },
-  "homepage": "https://github.com/omsuz321/firstWebProjekt#readme"
+  "homepage": "https://github.com/omsuz321/firstWebProjekt#readme",
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
 }
