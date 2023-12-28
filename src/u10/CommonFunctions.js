@@ -50,5 +50,7 @@ function addCross({ viewBox, field, stroke = "black", strokeWidth = "10" }) {
     const line2 = createCross({ "x1": x1 , "y1": y1 + height -20 , "x2": x2 , "y2": y2 - height +20, "stroke": stroke, "strokeWidth": strokeWidth });
     viewBox.appendChild(line1);
     viewBox.appendChild(line2);
-}
 
+
+
+}
