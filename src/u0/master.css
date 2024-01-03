@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    width: 1000vw;
+    height: 100vh;
+   
+}
+
+body{
+    min-height: 100vh;
+    background: #1a313a;/* 76c4ae #2e37bd|| dark blue: 253f81 brighter blue: 4d83c1 | 202124*/
+}
+.logo {
+    /* Add your logo styling properties here */
+}
+
+
+
+.upper-bar > * {
+    background: #76c4ae;
+    color: #ffff
+}
+
+.sidebar{
+    position: absolute;
+    width: 60px;
+    background: #fff;
+    overflow: hidden;
+    transition: 0.5s;
+    
+}
+
+.sidebar:hover{
+    width: 100px;
+}
+
+/* this rule only applies to images that are within the sidebar*/
+.sidebar  img{
+    width: 3vw;
+    height: 3vh;
+ 
+}
+
+
+
+/*
+In CSS, "the overflow" property controls how content behaves when it's larger than the container. Common values include:
+
+visible: Content overflows and is visible outside the container.
+hidden: Content is clipped, and overflow is not visible.
+scroll: Scrollbars appear to navigate through the overflowing content.
+auto: Scrollbars appear only if content overflows, allowing scrolling.
+inherit: Inherits the overflow value from the parent element.
+
+
+The "transition" property in CSS is used to control the smoothness and duration of changes in property values.
+It allows you to define how an element should transition from one state to another 
+when certain properties are altered.
+
+href="#"  is often used in anchor (<a>) elements to create a hyperlink that doesn't 
+navigate to a different page but stays on the current page or triggers a specific action.
+
+*/
+

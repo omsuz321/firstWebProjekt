@@ -6,7 +6,7 @@ const handler = {
     get: function (target, key, receiver) {
       if (key === "iteratorViaGeneraor") {
         if (!this.iterator) {
-          this.iterator = target.iteratorViaGeneraor(); // Create the iterator if it doesn't exist
+          this.iterator = target.iteratorViaGeneraor(); // Create the iterator if it didnt exist
         }
   
         loggingTable.set([`k${loggingTable.size}`], `there are  ${target.dependencies.length - loggingTable.size} left `);
@@ -31,13 +31,13 @@ const handler = {
   
   
   console.log("All Attributes:", allAttributes);
-  console.assert(allAttributes.includes('dependencies'), 'Die Vorrang-Klasse sollte ein "dependencies"-Attribut haben.');
+  console.assert(allAttributes.includes('dependencies'), 'The priority class should have a "dependencies" attribute.');
   
   
   // Test der Proxy-Logging-Funktionalität
   logger.iteratorViaGeneraor;
-  console.assert(loggingTable.size > 0, 'Das Logging sollte mindestens einen Eintrag in der Tabelle haben.');
-  console.assert(result.size > 0, 'Das Ergebnis-Set sollte mindestens einen Wert enthalten.');
+  console.assert(loggingTable.size > 0, 'The logging should have at least one entry in the table.');
+  console.assert(result.size > 0, 'The result set should contain at least one value.');
   
   console.log(result);
   logger.iteratorViaGeneraor;

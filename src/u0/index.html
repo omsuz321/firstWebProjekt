@@ -5,16 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     -->
     <title>Solution Navigator</title>
+    <link rel="stylesheet" href="./master.css">
 </head>
 <body>
-    <h1>Solution Navigartor</h1>
+    <div class= upper-bar id="head">
+        <h1>Solution Navigartor</h1>
+    </div>
 
-    <p>Hier werden die Lösungen der kommenden Übungen in Form von HTML angelagert</p>
-    <nav> <!-- das hier ist semantishc ausdruckstärker als eine normale liste, insbesondres für text-tospeech oder anderen Dingen-->
-        <ul>
-            <li><a href="../u1/Uebung1.html">ue1</a> </li>
-            <li><a href="../u2/Uebung2.html"></a></li>
-        </ul>
-    </nav>
+
+    <div class="container" id="list">
+        <nav> <!-- das hier ist semantishc ausdruckstärker als eine normale liste, insbesondres für text-tospeech oder anderen Dingen-->
+            <ul class="sidebar">
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <img src="./home-button.svg" alt="External SVG">
+                        </span>
+                        <span class="text"></span>
+                    </a>
+                </li>
+                <li><iframe  src="../u1/Uebung1.html"  width="600" height="400">ue1</a> </li>
+            </ul>
+        </nav>
+
+
+    </div>
+
+    <script>
+        var myDiv = document.getElementById('');
+        myDiv.addEventListener('mouseenter', function(e){
+        xPos = e.clientX - myDiv.offsetLeft;
+        yPos = e.clientY - myDiv.offsetTop;
+        alert('myDiv clicked at x: ' + xPos + ', y: ' + yPos);
+});
+    </script>
 </body>
 </html> 

@@ -4,10 +4,10 @@ const text = `
   Please insert your text here and update the 'text' variable.
 `;
 
-// Stop words list (simplified; you can expand it using the GitHub list)
+
 const stopWords = [
   'and', 'the', 'in', 'with', 'on', 'for', 'it', 'he', 'she', 'this', 'that'
-  // Add more stop words as needed
+
 ];
 
 // Function to remove HTML tags from the text
