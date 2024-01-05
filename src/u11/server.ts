@@ -4,8 +4,8 @@
 
 
 
-    function fetchData(x: aggregator): Promise<number> {
-        return fetch("http://127.0.0.1:5500/src/u10/data.xml")
+    function fetchData(x: aggregator, url: string): Promise<Element[]> {
+        return fetch(url)
                 .then((result) => {
                     return result.text();
                     
@@ -13,18 +13,17 @@
                 .then((text) => {
                     const xml = new DOMParser().parseFromString(text, "text/xml");
                     let data = Array.from(xml.querySelectorAll("baustein"));
-                    console.log(data);
+                   // console.log(text);
                     
-                    return 1;
+
+                    return data;
                 });
         }
-    
-    
-        fetch("http://127.0.0.1:5500/src/u10/data.xml")
-                .then((result) => {
-                     return result.text();
-                    
-                })
-                .then((text) => console.log(text))
+
+
+
+        fetchData("min",  "http://127.0.0.1:5500/src/u10/data.xml");
+    //fetchData("min",  "http://localhost:63342/firstWebProjekt/src/u10/data.xml");
+
 
                     
