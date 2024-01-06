@@ -13,7 +13,7 @@
 
 body{
     min-height: 100vh;
-    background: #1a313a;/* 76c4ae #2e37bd|| dark blue: 253f81 brighter blue: 4d83c1 | 202124*/
+    background: #76c4ae;/* 76c4ae #2e37bd|| dark blue: 253f81 brighter blue: 4d83c1 | 202124*/
 }
 .logo {
     /* Add your logo styling properties here */
@@ -22,7 +22,7 @@ body{
 
 
 .upper-bar > * {
-    background: #76c4ae;
+    background: #1a313a;
     color: #ffff
 }
 
