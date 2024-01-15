@@ -1,39 +1,13 @@
 {
-  "name": "firstwebprojekt",
+  "name": "u12",
   "version": "1.0.0",
-  "description": "This project combines elements from 'firstwebprojekt' and 'u0'",
-  "main": "index.js",
-  "type": "module",
+  "description": "",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/omsuz321/firstWebProjekt.git"
-  },
-  "keywords": [
-    "first",
-    "web",
-    "project"
-  ],
-  "author": "Ömer Süzen",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/omsuz321/firstWebProjekt/issues"
-  },
-  "homepage": "https://github.com/omsuz321/firstWebProjekt#readme",
-  "devDependencies": {
-    "@types/node": "^20.10.5",
-    "@typescript-eslint/eslint-plugin": "^6.17.0",
-    "@typescript-eslint/parser": "^6.17.0",
-    "eslint": "^8.56.0",
-    "eslint-config-google": "^0.14.0",
-    "ts-node": "^10.9.2",
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "xmldom": "^0.6.0"
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
