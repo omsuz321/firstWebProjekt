@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" >
+
    
     <title>Solution Navigator</title>
     <link rel="stylesheet" href="./master.css">
 </head>
 <body>
     <div class= upper-bar id="head">
-        <h1>Solustion Navigartor</h1>
+        <h1>Solution Navigartor</h1>
     </div>
 
 
     
     <div class="container" id="list">
-        <nav> <!-- das hier ist semantishc ausdruckstärker als eine normale liste, insbesondres für text-tospeech oder anderen Dingen-->
-            <ul class="sidebar">
-                <li>
-                    <a href="#"> <!-- home botton-->
-                        <span class="icon">
-                            <img src="./home-button.svg" alt="External SVG">
-                        </span>
-                        <span class="text"></span>
-                    </a>
-                </li>
-                <li><iframe  src="../u1/Uebung1.html"  width="600" height="400">ue1</a> </li>
-            </ul>
-        </nav>
+         <!-- das hier ist semantishc ausdruckstärker als eine normale liste, insbesondres für text-tospeech oder anderen Dingen-->
+            <div class="sidebar">
+                <div class="items">
+                      <div id="home-button">
+                        <a href="#"> <!-- home botton-->
+                            <span class="logo">
+                                <img src="./home-button.svg" alt="External SVG">
+                            </span>
+                        </a>
+                    </div>
+                    <div>Home</div>
+                    <div>Home</div>
+                    <div>Home</div>
+                    <div>Home</div>
+                    <div>Home</div>
+                    <div>Home</div>
+                    <div>Home</div>
+                    <div>Home</div><div>Home</div>
+                    <div>Home</div>
+                </div>
+                
+                <div class="arrow">
+                    <img src="./arrow.svg" alt="External SVG">
+                </div>
+            </div>
 
-
+<!--<iframe  src="../u1/Uebung1.html"  width="600" height="400" title="u1"></iframe>-->
     </div>
 
     <script>
-        var myDiv = document.getElementById('');
+        var myDiv = document.getElementById('list');
         myDiv.addEventListener('mouseenter', function(e){
         xPos = e.clientX - myDiv.offsetLeft;
         yPos = e.clientY - myDiv.offsetTop;
-        alert('myDiv clicked at x: ' + xPos + ', y: ' + yPos);
+        //alert('myDiv clicked at x: ' + xPos + ', y: ' + yPos);
+        myDiv.addEventListener('onclick', ()=>{
+        })
+
 });
     </script>
 </body>

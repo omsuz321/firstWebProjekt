@@ -1,70 +1,120 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    :root {
+        --upper-bar-height: 5vh; /* Define the height of the upper bar */
+      }
 
-.container {
-    display: flex;
+    .container {
+        display: flex;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
     
-    width: 1000vw;
-    height: 100vh;
-   
-}
+    }
 
-body{
-    min-height: 100vh;
-    background: #76c4ae;/* 76c4ae #2e37bd|| dark blue: 253f81 brighter blue: 4d83c1 | 202124*/
-}
-.logo {
-    /* Add your logo styling properties here */
-}
-
-
-
-.upper-bar > * {
-    background: #1a313a;
-    color: #ffff
-}
-
-.sidebar{
-    position: absolute;
-    width: 60px;
-    background: #fff;
-    overflow: hidden;
-    transition: 0.5s;
+    body{
+        min-height: 100vh;
+        background: #76c4ae;/* 76c4ae #2e37bd|| dark blue: 253f81 brighter blue: 4d83c1 | 202124*/
+    }
+    .logo {
     
-}
-
-.sidebar:hover{
-    width: 100px;
-}
-
-/* this rule only applies to images that are within the sidebar*/
-.sidebar  img{
-    width: 3vw;
-    height: 3vh;
- 
-}
 
 
 
-/*
-In CSS, "the overflow" property controls how content behaves when it's larger than the container. Common values include:
+    }
 
-visible: Content overflows and is visible outside the container.
-hidden: Content is clipped, and overflow is not visible.
-scroll: Scrollbars appear to navigate through the overflowing content.
-auto: Scrollbars appear only if content overflows, allowing scrolling.
-inherit: Inherits the overflow value from the parent element.
+    .upper-bar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: var(--upper-bar-height); /* Use the variable for the upper bar height */
+        z-index: 1100; /* Set a higher z-index for the upper bar */
+      }
+
+    .upper-bar > * {
+        background: #1a313a;
+        color: #ffff
+        
+    }
+    
+
+    .sidebar {
+        display: grid;
+        grid-template-areas: /* left will the exercises be and the right is only the logo to pop up */
+          "item arrow"
+          "item arrow"
+          "item arrow"
+          "item arrow"
+          "item arrow"
+          "item arrow"
+          "item arrow"
+          "item arrow"
+          "item arrow"
+          "item arrow"
+          "item arrow"
+          "item arrow";
+        position: fixed;
+        top: var(--upper-bar-height); /* Position below the upper bar */
+        left: -5vw; /* Position sidebar outside the viewport */
+        width: 10vw; /* Initial width of the sidebar */
+        height: calc(100vh - var(--upper-bar-height)); /* Make the sidebar cover the remaining viewport height below the upper bar */
+        background-color: #fff; /* Sidebar background color */
+        transition: left 0.5s; /* Transition the left property for smooth animation */
+        z-index: 1000; /* Ensure the sidebar appears below the upper bar */
+        overflow: visible;
+      }
+
+    .sidebar:hover {
+        left: 0; /* Pull the sidebar into view */
+    }
 
 
-The "transition" property in CSS is used to control the smoothness and duration of changes in property values.
-It allows you to define how an element should transition from one state to another 
-when certain properties are altered.
 
-href="#"  is often used in anchor (<a>) elements to create a hyperlink that doesn't 
-navigate to a different page but stays on the current page or triggers a specific action.
 
-*/
+
+
+    .items{
+        grid-area:"item";
+    }
+    /* this rule only applies to images that are within the sidebar*/
+
+
+
+
+    .arrow {
+        grid-area: "arrow";
+
+        transition: transform 0.5s;
+        transform-origin: 50% 20%; 
+        justify-content:end
+
+    }
+
+
+    .sidebar:hover .arrow {
+        transform: rotate(180deg);
+    }
+
+
+    /*
+    In CSS, "the overflow" property controls how content behaves when it's larger than the container. Common values include:
+
+    visible: Content overflows and is visible outside the container.
+    hidden: Content is clipped, and overflow is not visible.
+    scroll: Scrollbars appear to navigate through the overflowing content.
+    auto: Scrollbars appear only if content overflows, allowing scrolling.
+    inherit: Inherits the overflow value from the parent element.
+
+
+    The "transition" property in CSS is used to control the smoothness and duration of changes in property values.
+    It allows you to define how an element should transition from one state to another 
+    when certain properties are altered.
+
+    href="#"  is often used in anchor (<a>) elements to create a hyperlink that doesn't 
+    navigate to a different page but stays on the current page or triggers a specific action.
+
+    */
 

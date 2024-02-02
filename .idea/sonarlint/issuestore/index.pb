@@ -15,3 +15,16 @@ A
 dist/hello.js,e\0\e0f1ae8d6b87327087c0119705be84e976e46634
 G
 src/u10/statistics.html,6\9\69154b2220a096169bba607a1ca0ccc9f9b4d1b2
+A
+src/u0/index.html,2\6\261d4155641095b59afba1f3ffd0901233d32878
+H
+src/u1/Erlaeuterung.html,1\0\10402e8e97553f7a10d5a9a1976b60672e4781f3
+<
+package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
+:
+
+deno.jsonc,2\3\234ea64dfb84048007b213b97c6f902f0534e2c1
+9
+	deno.lock,2\b\2bb520392d6ecc375feff31447850402cf6735d1
+=
+tsconfig.json,6\1\61ebb9fd6e8cf9082658121d5d81e297791dacd0
