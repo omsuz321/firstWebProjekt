@@ -4,13 +4,14 @@
         box-sizing: border-box;
     }
     :root {
-        --upper-bar-height: 5vh; /* Define the height of the upper bar */
+        --upper-bar-height: 50px; /* Defined the height of the upper bar */
+        --side-bar-width: 80px;
       }
 
     .container {
         display: flex;
         height: 100vh;
-        position: relative;
+
         overflow: hidden;
     
     }
@@ -27,17 +28,23 @@
     }
 
     .upper-bar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: var(--upper-bar-height); /* Use the variable for the upper bar height */
-        z-index: 1100; /* Set a higher z-index for the upper bar */
-      }
 
-    .upper-bar > * {
+        display: flex;
+        position: fixed;
+        justify-content: space-between;
+        top: 0;
+        width: 100vw;
+        height: var(--upper-bar-height);
+        z-index: 1100; 
         background: #1a313a;
         color: #ffff
-        
+
+      }
+
+    .upper-bar  * {
+        background: #1a313a;
+        color: #ffff;
+
     }
     
 
@@ -58,9 +65,9 @@
           "item arrow";
         position: fixed;
         top: var(--upper-bar-height); /* Position below the upper bar */
-        left: -5vw; /* Position sidebar outside the viewport */
-        width: 10vw; /* Initial width of the sidebar */
-        height: calc(100vh - var(--upper-bar-height)); /* Make the sidebar cover the remaining viewport height below the upper bar */
+        left: calc(-1 * var(--side-bar-width) + 15px); /* Position sidebar outside the viewport */
+        width: var(--side-bar-width); /* Initial width of the sidebar */
+        height: calc(100vh ); /* Make the sidebar cover the remaining viewport height below the upper bar */
         background-color: #fff; /* Sidebar background color */
         transition: left 0.5s; /* Transition the left property for smooth animation */
         z-index: 1000; /* Ensure the sidebar appears below the upper bar */
@@ -70,7 +77,6 @@
     .sidebar:hover {
         left: 0; /* Pull the sidebar into view */
     }
-
 
 
 
@@ -89,13 +95,13 @@
 
         transition: transform 0.5s;
         transform-origin: 50% 20%; 
-        justify-content:end
+        align-self: center;
 
     }
 
 
     .sidebar:hover .arrow {
-        transform: rotate(180deg);
+        /*transform: rotate(180deg);*/
     }
 
 
