@@ -27,30 +27,31 @@
         var time; // to keep the timer for the timer function
 
         function timer() {
-            
-           
-            
-            // Prevents that a new name with timer gets added to the container and prevents the execution of the whole process
-            //so no new name was added
-            if(document.getElementById("person-name").value === "")
+            // Prevent adding a new name if the input field is empty
+            if (document.getElementById("person-name").value === "")
                 return;
+        
+            // Clear the previous interval before setting up a new one
+            clearInterval(intervalId);
+        
+            // Get the name of the person from the input field
             personName = document.getElementById("person-name").value;
-
-            // Creating a new li element
+        
+            // Create a new <li> element
             newElement = document.createElement("li");
-
-            // Appending the new li element to the container
+        
+            // Append the new <li> element to the container
             containerForNames.appendChild(newElement);
-            
+        
             // Set the time to midnight (00:00:00)
             time = new Date();
             time.setHours(0, 0, 0);
-
-            // Set up an interval to call the displayTimer function every second (1000 milliseconds)
+        
+            // Set up a new interval to call the displayTimer function every second (1000 milliseconds)
             intervalId = setInterval(function () {
                 displayTimer(newElement, personName);
             }, 1000);
-
+        
             // Clear the input field after adding the name
             document.getElementById("person-name").value = "";
         }
