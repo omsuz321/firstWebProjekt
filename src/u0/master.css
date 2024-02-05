@@ -32,7 +32,7 @@
 
     body{
         min-height: 100vh;
-        background: #76c4ae;/* 76c4ae #2e37bd|| dark blue: 253f81 brighter blue: 4d83c1 | 202124*/
+        background: linear-gradient(#252020, #74cfad );/* 76c4ae #2e37bd|| dark blue: 253f81 brighter blue: 4d83c1 | 202124*/
     }
 
     /*this is for the exercises to be shown in with*/
@@ -69,16 +69,16 @@
         width: 100vw;
         height: var(--upper-bar-height);
         z-index: 1100; 
-        background: #1a313a;
+
         color: #ffff
 
       }
 
     .upper-bar  * {
-        background: #1a313a;
+
         color: #ffff;
         padding: 10px;
-    
+        padding-right: 50px;
 
     }
     
