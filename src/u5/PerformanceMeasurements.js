@@ -27,4 +27,4 @@ function testTime(contentProperty, input = "<div>this is the <strong>default</st
 // console.log("textContent ${testTime(textContent)}");
 // console.log("outerHTML ${testTime(outerHTML)}");
 
-export {createElement};
+//export {createElement}; 

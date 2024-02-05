@@ -1,31 +1,64 @@
+    /*to do
+    the iframe must be pulled to the side when the side bar opens
+    i could archive this via widht manipulating
+    */
+    
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
     :root {
-        --upper-bar-height: 50px; /* Defined the height of the upper bar */
+        --upper-bar-height: 60px; /* Defined the height of the upper bar */
         --side-bar-width: 80px;
       }
 
     .container {
         display: flex;
-        height: 100vh;
-
         overflow: hidden;
+        margin-top: var(--upper-bar-height); /* Adjust margin-top to match the upper bar height */
+        height: 100vh;
+        overflow: hidden;
+        margin-left: var(--side-bar-width); /* Push everything to the right when sidebar is hovered */
+        transition: left 0.5s;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+
     
+    }
+    .current-excerise{
+        justify-self: center;
     }
 
     body{
         min-height: 100vh;
         background: #76c4ae;/* 76c4ae #2e37bd|| dark blue: 253f81 brighter blue: 4d83c1 | 202124*/
     }
+
+    /*this is for the exercises to be shown in with*/
+    .exercise{
+        margin: 30px;
+        
+        height: calc(80vh - var(--upper-bar-height));
+        width: 100%;
+        background-color: #ffffff;
+    }
+
+    /*adjsuting iframe to the outer container*/
+    .exercise iframe {
+        width: 100%;
+        height: 100%; /* Optionally, adjust the height as needed */
+    }
     .logo {
-    
-
-
+        
 
     }
+
+    .container:hover{
+        margin-left:0;
+    }
+
+    
 
     .upper-bar {
 
@@ -44,12 +77,14 @@
     .upper-bar  * {
         background: #1a313a;
         color: #ffff;
+        padding: 10px;
+    
 
     }
     
 
     .sidebar {
-        display: grid;
+        display: grid; 
         grid-template-areas: /* left will the exercises be and the right is only the logo to pop up */
           "item arrow"
           "item arrow"
@@ -67,17 +102,24 @@
         top: var(--upper-bar-height); /* Position below the upper bar */
         left: calc(-1 * var(--side-bar-width) + 15px); /* Position sidebar outside the viewport */
         width: var(--side-bar-width); /* Initial width of the sidebar */
-        height: calc(100vh ); /* Make the sidebar cover the remaining viewport height below the upper bar */
-        background-color: #fff; /* Sidebar background color */
-        transition: left 0.5s; /* Transition the left property for smooth animation */
+        height: calc(100vh ) ; /* Make the sidebar cover the remaining viewport height below the upper bar */
+        background-color: rgba(255, 0, 0, 0) ; /* Sidebar background color */
+        transition: left 0.5s, background-color 0.5s; /* Transition the left property for smooth animation */
         z-index: 1000; /* Ensure the sidebar appears below the upper bar */
         overflow: visible;
+
+        font-family: "Helvetica Neue", Arial, sans-serif; 
+        font-size: 16px; 
+        font-weight: bold; 
       }
 
     .sidebar:hover {
         left: 0; /* Pull the sidebar into view */
+        background-color:#ffff;
+        
     }
 
+    
 
 
 
@@ -85,24 +127,25 @@
     .items{
         grid-area:"item";
     }
-    /* this rule only applies to images that are within the sidebar*/
+
 
 
 
 
     .arrow {
         grid-area: "arrow";
-
-        transition: transform 0.5s;
-        transform-origin: 50% 20%; 
         align-self: center;
 
     }
+    @media(max-width: 800px){
 
+        .upper-bar{
+            flex-direction: column;
+        }
+        
 
-    .sidebar:hover .arrow {
-        /*transform: rotate(180deg);*/
     }
+    
 
 
     /*

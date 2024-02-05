@@ -10,13 +10,14 @@
 <body>
     <div class= upper-bar id="head">
         <h1>Solution Navigartor</h1>
+        <div class="date"><p>current date</p></div>
     </div>
 
 
     
     <div class="container" id="list">
          <!-- das hier ist semantishc ausdruckstärker als eine normale liste, insbesondres für text-tospeech oder anderen Dingen-->
-            <div class="sidebar">
+            <div class="sidebar" id="sidebar">
                 <div class="items">
                       <div id="home-button">
                         <a href="#"> <!-- home botton-->
@@ -37,23 +38,78 @@
                 </div>
                 
                 <div class="arrow">
-                    <img src="./arrow.svg" alt="External SVG">
+                    <svg id="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="100">
+                        <image xlink:href="./arrow.svg" width="100" height="100" />
+                    </svg>
                 </div>
             </div>
+            <span class="current-excerise">curren</span>
+            
+             <span id="show-exercise" class="exercise"><iframe  src="../u1/Uebung1.html"  width="600" height="400" title="u1"></iframe></span>
+                
+            
+        
 
 <!--<iframe  src="../u1/Uebung1.html"  width="600" height="400" title="u1"></iframe>-->
     </div>
 
-    <script>
-        var myDiv = document.getElementById('list');
-        myDiv.addEventListener('mouseenter', function(e){
-        xPos = e.clientX - myDiv.offsetLeft;
-        yPos = e.clientY - myDiv.offsetTop;
-        //alert('myDiv clicked at x: ' + xPos + ', y: ' + yPos);
-        myDiv.addEventListener('onclick', ()=>{
-        })
+    <script type="module">
+        import { doAnimate } from "./home-module.mjs";
+        /**
+        arrow functoion 
 
-});
+        **/
+        const sidebar = document.getElementById('sidebar');
+        const arrow = document.getElementById("arrow-svg");
+        sidebar.addEventListener('mouseenter', () => {
+            console.log('Mouse entered the sidebar.');
+            
+            // Update the transform attribute of the SVG element
+            const currentTransform = 'translate(60, 0) rotate(180) scale(1.5)';
+    
+    // Apply transform directly to the arrow container
+            arrow.setAttribute('transform', currentTransform);
+        });
+        sidebar.addEventListener('mouseleave', (e) => {
+            // Handle mouse leaving the sidebar
+            console.log('Mouse left the sidebar.');
+            const currentTransform = 'translate(0, 0) rotate(0) scale(1/1.5)';
+            arrow.setAttribute('transform', currentTransform);
+
+        });
+
     </script>
+
+    <script type="module">
+        /*
+        module
+        feth api
+        dom manipulation
+        dom selaction
+
+        */
+        import { insertContentWithModule } from "./home-module.mjs";
+        fetch('http://worldclockapi.com/api/json/utc/now')
+        .then(response => response.json())
+        .then(data => {
+            var currentDate = data.currentDateTime;
+            const date = document.getElementsByClassName("date")[0];
+            currentDate = `date: ${currentDate}`;
+            insertContentWithModule(date, "innerText", currentDate);
+        })
+        .catch(error => {
+            console.error('Error fetching current date:', error);
+        });
+
+
+        
+        
+    </script>
+
+    <script>
+   
+    </script>
+
+    
 </body>
 </html> 
