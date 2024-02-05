@@ -64,5 +64,21 @@ function getCurrentTransform(elem) {
     }
 }
 
+fetch('http://127.0.0.1:5500/src/u0/currentDate.html')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.text(); // or response.blob() if you want to handle binary data
+  })
+  .then(html => {
+    // Use the fetched HTML content here
+    console.log(html);
+  })
+  .catch(error => {
+    console.error('There was a problem fetching the HTML file:', error);
+  });
+
+
 
 

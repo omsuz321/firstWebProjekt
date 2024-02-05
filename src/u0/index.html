@@ -42,9 +42,7 @@
                         <image xlink:href="./arrow.svg" width="100" height="100" />
                     </svg>
                 </div>
-            </div>
-            <span class="current-excerise">curren</span>
-            
+            </div>            
              <span id="show-exercise" class="exercise"><iframe  src="../u1/Uebung1.html"  width="600" height="400" title="u1"></iframe></span>
                 
             
@@ -90,7 +88,9 @@
         */
         import { insertContentWithModule } from "./home-module.mjs";
         fetch('http://worldclockapi.com/api/json/utc/now')
-        .then(response => response.json())
+        .then(response => {
+            console.log("date is being fetched")
+            return response.json()})
         .then(data => {
             var currentDate = data.currentDateTime;
             const date = document.getElementsByClassName("date")[0];

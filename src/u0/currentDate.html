@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        code {
+            background-color: #f8f9fa;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        strong {
+            color: #28a745;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>JavaScript Spread Operator Examples</h2>
+        <p>
+            <strong>Example 1: Spread operator with arrays</strong><br>
+            <code>
+                const numbers = [1, 2, 3, 4, 5];<br>
+                const newArray = [...numbers, 6, 7, 8];<br>
+                console.log(newArray); // Output: [1, 2, 3, 4, 5, 6, 7, 8]
+            </code>
+        </p>
+        <p>
+            <strong>Example 2: Spread operator with function arguments</strong><br>
+            <code>
+                function addNumbers(a, b, c) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return a + b + c;<br>
+                }<br>
+                const numbersToAdd = [1, 2, 3];<br>
+                const sum = addNumbers(...numbersToAdd);<br>
+                console.log(sum); // Output: 6 (1 + 2 + 3 = 6)
+            </code>
+        </p>
+        <p>
+            <strong>Example 3: Spread operator with object literals</strong><br>
+            <code>
+                const person = { name: 'John', age: 30 };<br>
+                const details = { ...person, city: 'New York', country: 'USA' };<br>
+                console.log(details); // Output: { name: 'John', age: 30, city: 'New York', country: 'USA' }
+            </code>
+        </p>
+        <p>
+            The spread operator (...) in JavaScript allows you to expand elements of an iterable (like an array) into individual elements. It's a powerful feature that simplifies various tasks, including array manipulation, function calls, and object composition.
+        </p>
+        <p>
+            Overall, the spread operator is a versatile tool that simplifies coding tasks by enabling easy manipulation and composition of arrays and objects. It enhances readability and flexibility in JavaScript programming.
+        </p>
+    </div>
+</body>
+</html>
