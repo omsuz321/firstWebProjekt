@@ -64,20 +64,25 @@ function getCurrentTransform(elem) {
     }
 }
 
-fetch('http://127.0.0.1:5500/src/u0/currentDate.html')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.text(); // or response.blob() if you want to handle binary data
-  })
-  .then(html => {
-    // Use the fetched HTML content here
-    console.log(html);
-  })
-  .catch(error => {
-    console.error('There was a problem fetching the HTML file:', error);
-  });
+export async function getFileFromServer(fileLocation, fileType = "text"){
+  return await fetch(`http://127.0.0.1:5500/src/${fileLocation}`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response[fileType](); // or response.blob() if you want to handle binary data
+          })
+          .then(content => {
+            // Use the fetched content here
+            console.log(content);
+          })
+          .catch(error => {
+            console.error(`There was a problem fetching the ${fileType} file:`, error);
+          });
+
+}
+
+//getFileFromServer("u0/currentDate.html")
 
 
 
