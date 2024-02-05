@@ -17,9 +17,9 @@
       .container {
         display: flex;
         overflow: hidden;
-        height: calc(100vh - var(--upper-bar-height)); /* Adjust the height to fill the remaining viewport height */
+        height: calc(100vh - var(--upper-bar-height)); /* Adjusting the height to fill the remaining viewport height */
         overflow: hidden;
-        margin-left: var(--side-bar-width); /* Push everything to the right when sidebar is hovered */
+        padding-left: var(--side-bar-width); /* Pushing everything to the right when sidebar is hovered */
         transition: left 0.5s;
         flex-wrap: wrap;
         flex-direction: row-reverse;
@@ -31,7 +31,7 @@
     body {
         min-height: 100vh;
         background: linear-gradient(#252020, #74cfad); /* Gradient background */
-        padding-top: var(--upper-bar-height); /* Adjust padding-top to match the upper bar height */
+        padding-top: var(--upper-bar-height); /* Adjusting padding-top to match the upper bar height */
     }
 
     /*this is for the exercises to be shown in with*/
@@ -69,8 +69,7 @@
         top: 0;
         width: 100vw;
         height: var(--upper-bar-height);
-        z-index: 1100; 
-
+        z-index: 1100;  
         color: #ffff
 
       }
@@ -101,12 +100,12 @@
           "item arrow";
         position: fixed;
         top: var(--upper-bar-height); /* Position below the upper bar */
-        left: calc(-1 * var(--side-bar-width) + 15px); /* Position sidebar outside the viewport */
+        left: calc(-1 * var(--side-bar-width) + 20px); /* Position sidebar outside the viewport */
         width: var(--side-bar-width); /* Initial width of the sidebar */
-        height: calc(100vh ) ; /* Make the sidebar cover the remaining viewport height below the upper bar */
+        height: calc(100vh ) ; 
         background-color: rgba(255, 0, 0, 0) ; /* Sidebar background color */
         transition: left 0.5s, background-color 0.5s; /* Transition the left property for smooth animation */
-        z-index: 1000; /* Ensure the sidebar appears below the upper bar */
+        z-index: 1000; 
         overflow: visible;
 
         font-family: "Helvetica Neue", Arial, sans-serif; 
@@ -130,6 +129,29 @@
     }
 
 
+    .items {
+        grid-area: item;
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Add some space between each item */
+    }
+    
+    /* Style for each individual item */
+    .items div {
+        padding: 10px; 
+        font-size: 18px; /* Sets the font size */
+        font-weight: bold; /* Sets the font weight */
+        color: #333; /* Sets the text color */
+        background-color: #f0f0f0; /* Sets the background color */
+        border-radius: 5px; /* Adds rounded corners */
+        transition: background-color 0.3s; /* Smooths the transition for background color */
+    }
+    
+    /* Hover effect for items */
+    .items div:hover {
+        background-color: #ddd; /* Change background color on hover */
+    }
+
 
 
 
@@ -146,7 +168,7 @@
         
 
     }
-    
+
 
 
     /*
