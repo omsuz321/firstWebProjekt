@@ -7,6 +7,7 @@
     <title>Solution Navigator</title>
     <link rel="stylesheet" href="./master.css">
 </head>
+
 <body>
     <div class= upper-bar id="head">
         <h1>Solution Navigartor</h1>
@@ -26,7 +27,7 @@
                             </span>
                         </a>
                     </div>
-                    <div>Home</div>
+                    <div id="ka" >u0</div>
                     <div>Home</div>
                     <div>Home</div>
                     <div>Home</div>
@@ -80,6 +81,8 @@
 
     <script type="module">
         /*
+
+        to fetch the date 
         module
         feth api
         dom manipulation
@@ -106,11 +109,21 @@
         
     </script>
 
+    <!--  TO Do
+    add all ecentlistener to all exercises-->
     <script type="module">
-        import { getFileFromServer } from "./home-module.mjs";
-        
-   
+        import { insertFileIntoElement } from "./home-module.mjs";
+        document.getElementById("ka").addEventListener("click", () => {
+            // Get a reference to the iframe element using its ID
+            const iframe = document.getElementById('show-exercise').querySelector('iframe');
+            
+            // Set the src attribute of the iframe to the new URL
+            iframe.src = "./currentDate.html";
+        });
     </script>
+    
+
+
 
     
 </body>

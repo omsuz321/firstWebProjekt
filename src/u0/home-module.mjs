@@ -74,7 +74,8 @@ export async function getFileFromServer(fileLocation, fileType = "text"){
           })
           .then(content => {
             // Use the fetched content here
-            console.log(content);
+            //console.log(content);
+            return content;
           })
           .catch(error => {
             console.error(`There was a problem fetching the ${fileType} file:`, error);
@@ -82,7 +83,18 @@ export async function getFileFromServer(fileLocation, fileType = "text"){
 
 }
 
-//getFileFromServer("u0/currentDate.html")
+export  function insertFileIntoElement({fileLocation ,elementID ,contentProperty = 'innerText'}){
+  getFileFromServer(fileLocation)
+  .then(content => {
+      //console.log(content);
+      insertContentWithModule(elementID, contentProperty, content)
+  })
+}
+
+
+
+//insertFileIntoElement({fileLocation: "u0/currentDate.html", elementID: "targetElement"});
+//getFileFromServer("u0/currentDate.html");
 
 
 
