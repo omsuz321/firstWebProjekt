@@ -100,18 +100,20 @@
             "item arrow";
             position: fixed;
             top: var(--upper-bar-height); /* Position below the upper bar */
-            left: calc(-1 * var(--side-bar-width) + 20px); /* Position sidebar outside the viewport */
+           
             width: var(--side-bar-width); /* Initial width of the sidebar */
-            height: calc(100vh ) ; 
-            background-color: rgba(255, 0, 0, 0) ; /* Sidebar background color */
-            transition: left 0.5s, background-color 0.5s; /* Transition the left property for smooth animation */
+            height: calc(100vh); 
+            background-color: rgba(255, 0, 0, 0);
+            left: calc(-1 * var(--side-bar-width) + 20px); /* to position  sidebar outside the viewport */
+            transition: left 0.5s, background-color 0.5s; /*  smooth animation form left is side bare gets pulled into the view port */
             z-index: 1000; 
-            overflow: visible;
-
+            overflow: auto; /* Added scrollbar when content overflows */
+            
             font-family: "Helvetica Neue", Arial, sans-serif; 
             font-size: 16px; 
             font-weight: bold; 
         }
+        
 
         .sidebar:hover {
             left: 0; /* Pull the sidebar into view */

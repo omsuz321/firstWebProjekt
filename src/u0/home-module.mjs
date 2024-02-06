@@ -74,7 +74,7 @@ export async function getFileFromServer(fileLocation, fileType = "text"){
           })
           .then(content => {
             // Use the fetched content here
-            //console.log(content);
+            console.log(content);
             return content;
           })
           .catch(error => {
@@ -83,11 +83,11 @@ export async function getFileFromServer(fileLocation, fileType = "text"){
 
 }
 
-export  function insertFileIntoElement({fileLocation ,elementID ,contentProperty = 'innerText'}){
+export  function insertFileIntoElement({fileLocation ,element ,contentProperty = 'innerHTML'}){
   getFileFromServer(fileLocation)
   .then(content => {
       //console.log(content);
-      insertContentWithModule(elementID, contentProperty, content)
+      insertContentWithModule(element, contentProperty, content);
   })
 }
 

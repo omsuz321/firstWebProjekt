@@ -27,8 +27,8 @@
                             </span>
                         </a>
                     </div>
-                    <div id="ka" >u0</div>
-                    <div>Home</div>
+                    <div id="spread" >Spread</div>
+                    <div id="u1">u1</div>
                     <div>Home</div>
                     <div>Home</div>
                     <div>Home</div>
@@ -44,7 +44,7 @@
                     </svg>
                 </div>
             </div>            
-             <span id="show-exercise" class="exercise"><iframe  src="../u1/Uebung1.html"  width="600" height="400" title="u1"></iframe></span>
+             <span id="show-exercise" class="exercise"><iframe  src="./welcome.html"  width="100%" height="100%" title="u1"></iframe></span>
                 
             
         
@@ -113,14 +113,22 @@
     add all ecentlistener to all exercises-->
     <script type="module">
         import { insertFileIntoElement } from "./home-module.mjs";
-        document.getElementById("ka").addEventListener("click", () => {
-            // Get a reference to the iframe element using its ID
-            const iframe = document.getElementById('show-exercise').querySelector('iframe');
-            
-            // Set the src attribute of the iframe to the new URL
-            iframe.src = "./currentDate.html";
-        });
+    
+        var addToIFrame = ({ elementToBeTriggerID, fileLocation, iframeID = "show-exercise" }) => {
+            const iframe = document.getElementById(iframeID);
+            // Uses elementToBeTriggerID directly as the element ID
+            const elementToTrigger = document.getElementById(elementToBeTriggerID);
+            // Adds an event listener directly to the element with ID elementToBeTriggerID
+            elementToTrigger.addEventListener("click", () => {
+                insertFileIntoElement({ fileLocation: fileLocation, element: iframe });
+            });
+        };
+        addToIFrame({ elementToBeTriggerID: "home-button", fileLocation: "u0/welcome.html" });
+        addToIFrame({ elementToBeTriggerID: "spread", fileLocation: "u0/spread.html" });
+        addToIFrame({ elementToBeTriggerID: "u1", fileLocation: "u1/Erlaeuterung.html" });
     </script>
+    
+    
     
 
 
