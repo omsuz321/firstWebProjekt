@@ -111,6 +111,7 @@
             font-family: "Helvetica Neue", Arial, sans-serif; 
             font-size: 16px; 
             font-weight: bold; 
+            
         }
         
 
@@ -119,15 +120,6 @@
             background-color:#ffff;
             overflow: auto; /* Shows scrollbar on hover */
             
-        }
-
-        
-
-
-
-
-        .items{
-            grid-area:"item";
         }
 
 
@@ -143,17 +135,21 @@
             padding: 10px; 
             font-size: 18px; /* Sets the font size */
             font-weight: bold; /* Sets the font weight */
-            color: #333; /* Sets the text color */
+             
             background-color: #f0f0f0; /* Sets the background color */
             border-radius: 5px; /* Adds rounded corners */
             transition: background-color 0.3s; /* Smooths the transition for background color */
+            color: transparent; /* Sets the text color to transparent */
         }
         
-        /* Hover effect for items */
+
         .items div:hover {
-            background-color: #ddd; /* Change background color on hover */
+            background-color: #ddd; /* Changes background color on hover */
         }
 
+        .sidebar:hover .items div{
+            color: #333; /* Sets the text color */
+        }
 
 
 
