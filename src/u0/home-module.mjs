@@ -83,11 +83,11 @@ export async function getFileFromServer(fileLocation, fileType = "text"){
 
 }
 
-export  function insertFileIntoElement({fileLocation ,element ,contentProperty = 'innerHTML'}){
+export  function insertFileIntoElement({fileLocation ,element}){
   getFileFromServer(fileLocation)
   .then(content => {
-      //console.log(content);
-      insertContentWithModule(element, contentProperty, content);
+    element.contentWindow.document.open()
+    element.contentWindow.document.write(content);
   })
 }
 

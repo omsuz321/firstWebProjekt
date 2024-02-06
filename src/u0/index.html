@@ -44,7 +44,7 @@
                     </svg>
                 </div>
             </div>            
-             <span id="show-exercise" class="exercise"><iframe  src="./welcome.html"  width="100%" height="100%" title="u1"></iframe></span>
+             <span id="show-exercise" class="exercise"><iframe id="iframeShow" src="./welcome.html"  width="100%" height="100%" title="u1"></iframe></span>
                 
             
         
@@ -114,7 +114,7 @@
     <script type="module">
         import { insertFileIntoElement } from "./home-module.mjs";
     
-        var addToIFrame = ({ elementToBeTriggerID, fileLocation, iframeID = "show-exercise" }) => {
+        var addToIFrame = ({ elementToBeTriggerID, fileLocation, iframeID = "iframeShow" }) => {
             const iframe = document.getElementById(iframeID);
             // Uses elementToBeTriggerID directly as the element ID
             const elementToTrigger = document.getElementById(elementToBeTriggerID);
@@ -125,7 +125,8 @@
         };
         addToIFrame({ elementToBeTriggerID: "home-button", fileLocation: "u0/welcome.html" });
         addToIFrame({ elementToBeTriggerID: "spread", fileLocation: "u0/spread.html" });
-        addToIFrame({ elementToBeTriggerID: "u1", fileLocation: "u1/Erlaeuterung.html" });
+        addToIFrame({ elementToBeTriggerID: "u1", fileLocation: "u1/HTML-Wireframe.html" });
+        //document.getElementById("show-exercise").src = "../u1/Erlaeuterung.html";
     </script>
     
     
