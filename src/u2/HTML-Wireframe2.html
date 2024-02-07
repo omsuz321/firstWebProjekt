@@ -1,96 +1,181 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <Title>Survey Form</Title>
-    <Style>
-        .container {
-            width: 300px;
-            height: 200px;
-            background-color: white;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            border-bottom: 1px solid black;
-            
-        }
-        .center {
-        
-            justify-content: center;
-            align-items: center;
-            height: 190px;
-            width: auto;
-            margin: 0;
-        }
-        form {
-            
-            font-size: 8px;
-            text-align: right;
-            
-            
-            
-        }
-        input {
-            width: 70px; 
-            height: 10px;
-            margin-left: 10px; /* Adds some space between the input and label */
-        }
-        
-        label {
-            
-            text-align: right;
-            width: 100px; /* Adjusts the width to control the distance from the right edge */
-            margin-right: 10px; /* Adds some space between the label and input field */
-        }
-
-
-    </Style>
-
 </head>
+<style>
+    body
+    {
+        background-color: #98c2bc;
+    }
 
-<body style="background-color: lightblue; font-family: Roboto;">
-    <div style="height: auto;">
-        <center><h1 style="font-size:20px ;">Survey Form</h1></center>
-    </div>
-    
+    h1
+    {
+        text-align: center;
+    }
 
-   <center>
-    <div  class = "container" >
-        <div style=" margin-left: 100px;">
-            <form> 
-     
-                <center><h6 style="font-size: 8px;">Lets us know how to improve freeCodeCamp</h6></center>
-                <div>
-                    <LAbel for="name">* Name:</LAbel>
-                    <input type="text" id="name" name="name">
-                    <br>
-                    <label for ="email">*Email:</label>
-                    <input type="text" id="email" name="email">
-                    <br>
-                    <label for="age" id="age" name="age">Age</label>
-                    <input type="text">
-                </div>
+
+    .survey-container 
+    {
+        background-color: rgb(255, 255, 255);
+        width: 90%; 
+        height: 75vh ; 
+
+        border-radius: 15px; 
+        padding-top: 25px; 
+        margin: 20px auto; 
+    }
+
+    .heading-section
+    {
+        text-align: center;
+    }
+
+    .input-section
+    {
+        text-align: right;
+    }
+
+    .border-style
+    {
+        padding-right: 70px;
+        padding-top: 20px; 
+
+    }
+
+    label   
+    {
+        margin-right:15px;  
+    }
+
+    .selector-section
+    {
+
+
+
+        text-align: right;
+        margin-right: 90px;
+    }
+
+    .radio-input 
+    {
+        display: block;
+        text-align: right;
+
+
         
-                <div>
-                    
-                    <input type="radio" id="option1" name="options" value="option1">
-                    <label for="option1">Definnitly</label>
-                    <br>
-                
-                    
-                    <input type="radio" id="option2" name="options" value="option2">
-                    <label for="option2">Maybe</label>
-                    <br>
-                
-                    
-                    <input type="radio" id="option3" name="options" value="option3">
-                    <label for="option3">Not Sure 3</label>
-                </div>
-        
-        
-                 
-            </form>
+        margin-right: 50px;
+        margin-top:10px; 
+    }
+
+    .label-style
+    {
+        margin-top: 8px; 
+        margin-bottom: 8px; 
+    }
+
+    .text-style
+    {
+        text-align: right;
+        margin-right: 20vh; 
+    }
+
+    .selector-style
+    {
+        text-align: right;
+        margin-right: 50px;
+    }
+
+    .checkbox-layout
+    {
+        float:right;
+        margin-top: 15px; 
+    }
+</style>
+<body>
+    <h1>Survey Form</h1>
+    <div class="survey-container">
+        <div>
+            <p class="heading-section">Let us know how we can improve freeCodeCamp</p>
         </div>
+        <div class="border-style">
+
+            <div class="input-section">
+                <label for="fname">* Name:</label>
+                <input type="text" placeholder="Enter your name">
+                <br>
+                <br>
+                <label for="lname">* Email: </label>
+                <input type="text" placeholder="Enter your Email">
+                <br>
+                <br>
+                <label for="lname">* Age:</label>
+                <input type="text" placeholder="Age">
+                <br>
+                <br>
+            </div>
+
+            <div class="selector-section">
+                <label  for ="Student">Which option best describes your current role?</label>
+                <select name="Student" id="Student" style="padding-top: 6px; padding-bottom: 6px;">
+                <option value="Student">Student</option>
+                </select>
+            </div>
+
+
+            <div class="radio-input">
+                <label for="Student" style="display:inline-block;margin-right: 113px;">How likely is that you would recommend freeCodeCamp to a friend?</label>
+                <div style="display:block;">
+                    <input type="radio" class="label-style" name="choice">
+                    <label for="Definitely">Definitely</label>
+                    <br>
+                    <div style="margin-right: 13px;">
+                        <input type="radio" class="label-style" name="choice">
+                        <label for="Maybe">Maybe</label>
+                        <br>
+                    </div>
+
+
+
+                    <div style="margin-right: 2px;">
+                        <input type="radio" class="label-style" name="choice">
+                        <label for="notSure">Not sure</label>
+                    </div>
+                </div>
+            </div>
+            <div class="selector-style" style="margin-top: 15px;">
+                <label  for ="Select">What do you like the most in FCC?</label>
+                <select name="Select" id="Select" style="padding-top: 6px; padding-bottom: 6px;">
+                <option value="Selected">Select an option</option>
+                </select>
+            </div>
+            
+            <div style="margin-top: 15px; text-align: right;">
+                <label>Things that should be improved in the future(Check all that apply)</label>
+                <div class="checkbox-layout">
+                    <div>
+                        <input type="checkbox" class="label-style">
+
+                        <label for="frontend">Front-end Projects</label>
+                        <br>
+                    </div>
+                    <div style="margin-right: 1px;">
+                        <input type="checkbox" class="label-style">
+                        <label for="backend">Back-end Projects</label>
+                        <br>
+                    </div>
+                    <div style="margin-right: 2px;">
+                        <input type="checkbox" class="label-style">
+                        <label for="dataviz">Data Visualization</label>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+        </div>
+        
 
 
     </div>
-   </center>
-    
 </body>
+</html>
