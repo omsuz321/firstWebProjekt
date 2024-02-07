@@ -40,13 +40,15 @@ function sortWords(wordCount) {
 }
 
 // Main function for text analysis
-function analyzeText(text) {
+export function analyzeText(text) {
   const cleanedText = removeHtmlTags(text);
   const words = getWords(cleanedText);
   const wordCount = countWords(words);
   const sortedWords = sortWords(wordCount);
 
-  return sortedWords;
+  const wordsArray = sortedWords.map(word => `[${word[0]}, ${word[1]}]`);
+
+  return wordsArray;
 }
 
 // Result of the analysis

@@ -23,29 +23,18 @@
         <p>This example demonstrates text analysis using JavaScript.</p>
         <h2>JavaScript Code:</h2>
         <pre><code>
-const text = `
-  Your text here...
-  Plagiarism resolution is an interesting topic that considers various aspects.
-  Please insert your text here and update the 'text' variable.
-`;
-
-
 const stopWords = [
   'and', 'the', 'in', 'with', 'on', 'for', 'it', 'he', 'she', 'this', 'that'
-
 ];
 
-// Function to remove HTML tags from the text
 function removeHtmlTags(text) {
   return text.replace(/<[^>]*>/g, ' ');
 }
 
-// Function to split the text into words
 function getWords(text) {
   return text.split(/\s+/);
 }
 
-// Function to count the frequency of words
 function countWords(words) {
   const wordCount = {};
   words.forEach(word => {
@@ -57,27 +46,51 @@ function countWords(words) {
   return wordCount;
 }
 
-// Function to sort words by frequency
 function sortWords(wordCount) {
   return Object.entries(wordCount)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 3);
 }
 
-// Main function for text analysis
 function analyzeText(text) {
   const cleanedText = removeHtmlTags(text);
   const words = getWords(cleanedText);
   const wordCount = countWords(words);
   const sortedWords = sortWords(wordCount);
-
-  return sortedWords;
+  return sortedWords.map(([word, count]) => `${word}: ${count}`).join('\n');
 }
 
-// Result of the analysis
-const result = analyzeText(text);
-console.log('The 3 most frequent words:', result);
+function displayResult(sortedWords) {
+  const resultDiv = document.getElementById('result');
+  resultDiv.innerHTML = '<h2>The 3 most frequent words:</h2>';
+  sortedWords.forEach(word => {
+    resultDiv.innerHTML += `<p>${word[0]}: ${word[1]}</p>`;
+  });
+}
+
+document.getElementById('analyzeButton').addEventListener('click', function() {
+  const inputText = document.getElementById('textInput').value;
+  const sortedWords = analyzeText(inputText);
+  displayResult(sortedWords);
+});
         </code></pre>
     </div>
+    <h1>Text Analyzer</h1>
+    <button id="analyzeButton">Analyze Text</button><br>
+    <div style="display: flex;">
+      <textarea id="textInput" rows="10" cols="50" placeholder="Enter your text here..."></textarea><br>
+      <div id="result" ></div>
+    </div>
+    
+
 </body>
+<script type="module">
+  import {analyzeText} from "./TextAnalysis.mjs";
+
+  document.getElementById('analyzeButton').addEventListener('click', function() {
+    const inputText = document.getElementById('textInput').value;
+    const resultText = analyzeText(inputText);
+    document.getElementById('result').innerText = resultText;
+  });
+</script>
 </html>
