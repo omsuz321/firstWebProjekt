@@ -27,13 +27,7 @@ export async function getFileFromServer(fileLocation, fileType = "text"){
 
 }
 
-export  function insertFileIntoElement({fileLocation ,element}){
-  getFileFromServer(fileLocation)
-  .then(content => {
-    element.contentWindow.document.open()
-    element.contentWindow.document.write(content);
-  })
-}
+
 
 
 

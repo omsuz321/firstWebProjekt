@@ -55,13 +55,20 @@
         .upper-bar {
 
             display: flex;
-            position: fixed;
             justify-content: space-between;
             top: 0;
             width: 100vw;
             height: var(--upper-bar-height);
-            z-index: 1100;  
-            color: #ffff
+            color: #ffff;
+
+
+            
+            
+            
+            
+            
+            
+            position: fixed;
 
         }
 
@@ -89,10 +96,8 @@
             "item "
             "item "
             "item ";
-
-            top: var(--upper-bar-height); /* Positioning below the upper bar */
             width: var(--side-bar-width); /* Initial width of the sidebar */
-            height: calc(90vh); 
+            height: 90vh; 
             left: calc(-1 * var(--side-bar-width) + 20px); /* to position  sidebar outside the viewport */
             transition: left 0.5s, background-color 0.5s; /*  smooth animation form left is side bare gets pulled into the view port */
             
@@ -106,6 +111,9 @@
 
 
 
+
+
+            top: var(--upper-bar-height); /* Positioning below the upper bar */
             position: fixed;
         }
         
@@ -118,12 +126,6 @@
         }
 
 
-        .items {
-            grid-area: item;
-
-
-
-        }
         
         /* Style for each individual item */
         .sidebar div {
@@ -181,3 +183,4 @@
 
         */
 
+.sidebar {
