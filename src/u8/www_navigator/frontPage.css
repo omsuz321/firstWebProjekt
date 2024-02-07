@@ -12,7 +12,7 @@
     width: 100vw; /* 100% of the viewport width */
     margin-left: 3vh;
     margin-right: 5vh;
-    grid-template-columns: auto; /* Automatically adjust column size based on content */
+    grid-template-columns: auto; /* Automatically adjusts the  column size based on its content within*/
     grid-template-rows: 10% auto 10%;
     background-color: #C28283;
     border-radius: 10px;

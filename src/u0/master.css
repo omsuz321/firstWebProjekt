@@ -37,7 +37,7 @@
         /*this is for the exercises to be shown in with*/
         .exercise {
             margin: 30px;
-            height: calc(80vh - var(--upper-bar-height));
+            height: calc(90vh - var(--upper-bar-height));
             width: calc(100vw - var(--side-bar-width));
             background-color: #ffffff;
             border-radius: 10px;
@@ -98,7 +98,7 @@
             "item arrow"
             "item arrow";
             position: fixed;
-            top: var(--upper-bar-height); /* Position below the upper bar */
+            top: var(--upper-bar-height); /* Positioning below the upper bar */
            
             width: var(--side-bar-width); /* Initial width of the sidebar */
             height: calc(100vh); 
@@ -107,7 +107,7 @@
             transition: left 0.5s, background-color 0.5s; /*  smooth animation form left is side bare gets pulled into the view port */
             z-index: 1000; 
             overflow: hidden; /* Hides scrollbar by default */
-            
+
             font-family: "Helvetica Neue", Arial, sans-serif; 
             font-size: 16px; 
             font-weight: bold; 
@@ -116,7 +116,7 @@
         
 
         .sidebar:hover {
-            left: 0; /* Pull the sidebar into view */
+            left: 0; /* Pulls the sidebar into view */
             background-color:#ffff;
             overflow: auto; /* Shows scrollbar on hover */
             
@@ -127,7 +127,8 @@
             grid-area: item;
             display: flex;
             flex-direction: column;
-            gap: 10px; /* Add some space between each item */
+            gap: 10px; /* Adds some space between each item */
+
         }
         
         /* Style for each individual item */
@@ -135,7 +136,7 @@
             padding: 10px; 
             font-size: 18px; /* Sets the font size */
             font-weight: bold; /* Sets the font weight */
-             
+            
             background-color: #f0f0f0; /* Sets the background color */
             border-radius: 5px; /* Adds rounded corners */
             transition: background-color 0.3s; /* Smooths the transition for background color */
@@ -153,12 +154,6 @@
 
 
 
-        .arrow {
-            grid-area: "arrow";
-            align-self: center;
-            z-index: 1200; /* Set a higher z-index value */
-
-        }
         @media(max-width: 800px){
 
             .upper-bar{

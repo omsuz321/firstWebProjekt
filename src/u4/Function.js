@@ -18,7 +18,7 @@ function mul(a, b){
 }
 
 function addf(a){
-    return function(b){return a + b;}; // return an annnonymous function
+    return function(b){return a + b;}; // returns an annnonymous function
 }
 
 function applyf(fct){ // returns somthing where i can execute the function wiht recusion

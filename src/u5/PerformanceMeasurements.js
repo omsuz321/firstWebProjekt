@@ -7,8 +7,8 @@ function testTime(contentProperty, input = "<div>this is the <strong>default</st
     var t0, t1, diff = 0;
     var outerDiv;
     var innerDiv;
-    for(var i = 0; i < n; i++){ //crates always a new perent and child
-        outerDiv = document.createElement('div');//crates always a new perent 
+    for(var i = 0; i < n; i++){ //creates always a new perent and child
+        outerDiv = document.createElement('div');//creates always a new perent 
         innerDiv = document.createElement('div');// and child to parent
         outerDiv.appendChild(innerDiv);
         t0  = performance.now();
