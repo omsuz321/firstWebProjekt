@@ -11,16 +11,13 @@
 
         :root {
             --upper-bar-height: 60px; /* Defined the height of the upper bar */
-            --side-bar-width: 80px;
+            --side-bar-width: 100px;
         }
 
         .container {
             display: flex;
-            overflow: hidden;
             height: calc(100vh - var(--upper-bar-height)); /* Adjusting the height to fill the remaining viewport height */
             width:100vw;
-            overflow: hidden;
-            transition: left 0.5s;
             flex-wrap: wrap;
             flex-direction: row-reverse;
         }
@@ -51,11 +48,6 @@
             height: 100%; 
             border-radius: 10px;    
         }
-        .logo {
-            
-
-        }
-
 
 
         
@@ -85,33 +77,36 @@
         .sidebar {
             display: grid; 
             grid-template-areas: /* left will the exercises be and the right is only the logo to pop up */
-            "item arrow"
-            "item arrow"
-            "item arrow"
-            "item arrow"
-            "item arrow"
-            "item arrow"
-            "item arrow"
-            "item arrow"
-            "item arrow"
-            "item arrow"
-            "item arrow"
-            "item arrow";
-            position: fixed;
+            "item "
+            "item "
+            "item "
+            "item "
+            "item "
+            "item "
+            "item "
+            "item "
+            "item "
+            "item "
+            "item "
+            "item ";
+
             top: var(--upper-bar-height); /* Positioning below the upper bar */
-           
             width: var(--side-bar-width); /* Initial width of the sidebar */
-            height: calc(100vh); 
-            background-color: rgba(255, 0, 0, 0);
+            height: calc(90vh); 
             left: calc(-1 * var(--side-bar-width) + 20px); /* to position  sidebar outside the viewport */
             transition: left 0.5s, background-color 0.5s; /*  smooth animation form left is side bare gets pulled into the view port */
-            z-index: 1000; 
+            
             overflow: hidden; /* Hides scrollbar by default */
-
+            grid-gap   : 10px; /* Adds some space between each item */  
             font-family: "Helvetica Neue", Arial, sans-serif; 
             font-size: 16px; 
             font-weight: bold; 
-            
+
+
+
+
+
+            position: fixed;
         }
         
 
@@ -125,18 +120,17 @@
 
         .items {
             grid-area: item;
-            display: flex;
-            flex-direction: column;
-            gap: 10px; /* Adds some space between each item */
+
+
 
         }
         
         /* Style for each individual item */
-        .items div {
+        .sidebar div {
             padding: 10px; 
             font-size: 18px; /* Sets the font size */
             font-weight: bold; /* Sets the font weight */
-            
+           
             background-color: #f0f0f0; /* Sets the background color */
             border-radius: 5px; /* Adds rounded corners */
             transition: background-color 0.3s; /* Smooths the transition for background color */
@@ -144,11 +138,11 @@
         }
         
 
-        .items div:hover {
+        .sidebar div:hover {
             background-color: #ddd; /* Changes background color on hover */
         }
 
-        .sidebar:hover .items div{
+        .sidebar:hover  div{
             color: #333; /* Sets the text color */
         }
 
@@ -157,9 +151,12 @@
         @media(max-width: 800px){
 
             .upper-bar{
-                flex-direction: column;
+                justify-content: center; /* Zentriert entlang der Hauptachse (horizontal) */
+                flex-wrap: wrap;
+                height: calc(var(--upper-bar-height) - 15vh);
+
             }
-            
+
 
         }
 

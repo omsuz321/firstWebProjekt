@@ -1,0 +1,1 @@
+{vorname:"Ömer", nachname: "Süzen", kürzel: "osueze2s", matr: 9044332 }

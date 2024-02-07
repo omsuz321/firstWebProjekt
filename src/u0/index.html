@@ -19,7 +19,7 @@
     <div class="container" id="list">
 
             <div class="sidebar" id="sidebar">
-                <div class="items">
+                
                       <div id="home-button">
                         <a href="#"> <!-- home botton-->
                             <span class="logo">
@@ -39,9 +39,9 @@
                     <div id="u8">u8</div>
                     <div id="u9">u9</div>
                     <div id="u10">u10</div>
-                    <div id="u11">u11</div>
                     <div id="u12">u12</div>
-                </div>
+                    <div id="u11">u11</div>
+                
 
             </div>            
              <span id="show-exercise" class="exercise"><iframe id="iframeShow" src="./welcome.html"  width="100%" height="100%" title="u1"></iframe></span>
@@ -57,7 +57,7 @@
             const elementToTrigger = document.getElementById(elementToBeTriggerID);
             elementToTrigger.addEventListener("click", () => {
                 iframe.src = fileLocation;
-            });
+            }); 
         };
 
         addToIFrame({ elementToBeTriggerID: "home-button", fileLocation: "./welcome.html" });
@@ -80,33 +80,6 @@
     </script>
 
     <script type="module">
-        import { doAnimate } from "./home-module.mjs";
-        /**
-        arrow functoion 
-
-        **/
-        const sidebar = document.getElementById('sidebar');
-        const arrow = document.getElementById("arrow-svg");
-        sidebar.addEventListener('mouseenter', () => {
-            console.log('Mouse entered the sidebar.');
-            
-            // Update the transform attribute of the SVG element
-            const currentTransform = 'translate(60, 0) rotate(180) scale(1.5)';
-    
-        // Apply transform directly to the arrow container
-            arrow.setAttribute('transform', currentTransform);
-        });
-        sidebar.addEventListener('mouseleave', (e) => {
-            // Handle mouse leaving the sidebar
-            console.log('Mouse left the sidebar.');
-            const currentTransform = 'translate(0, 0) rotate(0) scale(1/1.5)';
-            arrow.setAttribute('transform', currentTransform);
-
-        });
-
-    </script>
-
-    <script type="module">
         /*
 
         to fetch the date 
@@ -114,11 +87,12 @@
         feth api
         dom manipulation
         dom selaction
+        arrow function
 
         */
         import { insertContentWithModule } from "./home-module.mjs";
         fetch('http://worldclockapi.com/api/json/utc/now')
-        .then(response => {
+        .then((response) => {
             console.log("date is being fetched")
             return response.json()})
         .then(data => {
